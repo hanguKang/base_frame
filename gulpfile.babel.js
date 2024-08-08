@@ -20,6 +20,7 @@ import babel from "gulp-babel";
 import uglify from "gulp-uglify";
 import watchify from "watchify";
 import fancy_log from "fancy-log";
+import purgecss from "gulp-purgecss";
 
 
 const tsProject = ts.createProject("tsconfig.json");
@@ -39,9 +40,9 @@ const routes = {
     src: "src/scss/style.scss",
     dest: "build/css",
     watch: "src/scss/**/*.scss",
-  },
+  }, 
   js: {
-    src: ["src/js/main.js", "src/js/owl.carousel.js"],
+    src: ["src/js/main.js"], //["src/js/main.js", "src/js/owl.carousel.js"]
     dest: "build/js",
     watch: "src/js/**/*.js",
   },
@@ -81,7 +82,7 @@ const watchedBrowserify = watchify( //#1 수정사항 지켜보기
   browserify({ //#0 typescript파일에서 require 또는 import 구분의 파일을 찾아내서 연결해 준다. 
     basedir:'.',
     debug:true,//debug:true의 값을 사용하면, tsify는 번들된 JavaScript 파일 안에 소스맵을 내보낸다. 소스맵을 사용하면 번들로 제공된 JavaScript 대신 브라우저에서 원본 Typescript 코드를 디버깅할 수 있다.  browser디버거를 열고 test.ts 안에 브레이크 포인트를 넣으면 소스 맵이 작동하는지 테스트할 수 있다. 페이지를 새로고침하면 브레이크 포인트가 페이지를 일시 중지하고 test.ts 에서 import로 먼저 들어오는 utils.ts를 디버깅할 수 있어야 한다. 
-    entries:['src/ts/test.ts'],
+    entries:['src/ts/util.ts'],
     cache:{},
     packageCache:{}
   })
@@ -103,7 +104,7 @@ const ts_bundler = ()=>{ //#2 typescript를 번들링한다.
 const tsToJs = () =>{ //#3. typescript를 js파일로 변환
   return ts_bundler()
         .on('error', fancy_log)
-        .pipe(vinySourceStream('test.js'))
+        .pipe(vinySourceStream('util.js'))
         .pipe(buffer())
         .pipe( babel({
            presets:['@babel/preset-env']
@@ -160,13 +161,15 @@ const styles = () =>
     .pipe(sass().on("error", sass.logError))
     .pipe(
       autoprefixer({
-        browsers: ["last 2 versions"],
+        overrideBrowserslist: ["last 2 versions"],
       })
     )
+    //.pipe(purgecss({content: ['build/**/*.html']}))  //사용하지 않는 css제거하기
     //.pipe(minifyCss())    
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(routes.scss.dest));
 
+    
 const ghDeploy = () =>
   gulp.src("build/**/*").pipe(
     ghPages([

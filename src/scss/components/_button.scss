@@ -1,24 +1,41 @@
-@use '../utiles/var_colors';
 @use '../utiles/var';
+@use '../utiles/var_colors';
 @use '../config/mixin';
 
 $btn:"[class^=b-]";
-span#{$btn}{ $font-size:14px; font-size:em($font-size); line-height:1.5; padding:em(6px, $font-size) em(12px, $font-size); height:auto; letter-spacing:-1px; margin-right:em(8px, $font-size ); margin-bottom:em(8px, $font-size);
-	&.btn-blue { }
-	&.btn-green { background-color:var_colors.$color_green; }
-	&.btn-purple{background-color:var_colors.$btn_bg_purple;}
+span#{$btn} { $font-size:var.$fs_btn; box-sizing:border-box; display:inline-block; font-size:em($font-size); line-height:1.5; padding:em(26px, $font-size) em(26px, $font-size); height:auto; letter-spacing:-1px; background-color:var_colors.$btn_bg; border-radius:em(8px, $font-size); text-align:center;
+	//사각형 
+	&.rect{border-radius:em(8px);
+		&.sm{width:em(350px, $font-size); height:em(74px, $font-size);}
+		&.md{width:em(488px, $font-size); height:em(108px, $font-size); }
+		&.lg{width:em(688px, $font-size); height:em(108px, $font-size); }
+	}
+	&.btn-green { background-color:var_colors.$btn_bg; }
+	&.btn-blue{background-color:var_colors.$btn_bg_blue;}
 	&.btn-red { background-color:var_colors.$btn_bg_red;}
-}
-#{$btn}{$font-size:16px;
+
+	//기본
+	&.rad{border-radius: calc(em(56px, $font-size) / 2); height:var.$formHeight;
+		&.srch{width:em(120px, $font-size); }
+		&.default{width:em(140px, $font-size);}
+		&.bd{width:em(85px, $font-size); height:em(46px, $font-size); }
+		//색상
+		&.wt{background-color:#fff; border:1px solid var_colors.$btnbdcolorgray;}
+		&.grn{background-color:var_colors.$primary_bg; border:1px solid var_colors.$btnbdcolorgreen;}
+		&.gry{background-color:var_colors.$color_gray ; border:1px solid var_colors.$color_gray;}
+	}
+}       
+
+#{$btn}{$font-size:$fs_btn;
 	text-indent:0;
 	display:inline-block;
 	height: em(var.$btnHeight);
-	padding: calc(( $btnHeight - $defaultfontsize ) / 4) 12px;
-	font-size:$defaultfontsize;
+	padding: calc(( var.$btnHeight - var.$defaultfontsize ) / 4) 12px;
+	font-size:var.$defaultfontsize;
 	line-height: 1.5;
 	text-align:center;
 	color:#fff;
-	background-color:$btnbgcolor;
+	background-color:var_colors.$btn_bg;
 	border:none;
 	border-radius:0;
 	vertical-align:middle;
@@ -171,7 +188,7 @@ span#{$btn}{ $font-size:14px; font-size:em($font-size); line-height:1.5; padding
 	}
 }
 #{$btn}.b-down{
-		background-color:$btnbgcolor;
+		background-color:var_colors.$btn_bg;
 		padding-left:10px;
 		padding-right:10px;
 		min-width: 100px;
@@ -279,8 +296,8 @@ i#{$btn}.b-sitego2{padding:0;min-height:inherit;}
 		line-height:15px;
 	}
 }
-#{$btn}.b-total{background-color:$btnbgcolor;}
-#{$btn}.b-chkAll{background-color:$btnbgcolor;}
+#{$btn}.b-total{background-color:var_colors.$btn_bg;}
+#{$btn}.b-chkAll{background-color:var_colors.$btn_bg;}
 #{$btn}.b-reg{background-color:#fff;color:#000;border:1px solid $bdcolor;}
 #{$btn}.b-del{background-color:#7f7f7f}
 #{$btn}.b-gray{
@@ -313,7 +330,7 @@ i#{$btn}.b-sitego2{padding:0;min-height:inherit;}
 #{$btn}.b-join{
 	@extend .b-lg;
 	background-color:#fff;
-	color:$btnbgcolor;
+	color:var_colors.$btn_bg;
 	//background: url(/static/ucms/img/ico-arrRight.png) 152px center no-repeat;
 	width:180px;
 	border:1px solid #000;
@@ -353,7 +370,7 @@ i#{$btn}.b-sitego2{padding:0;min-height:inherit;}
 	//background:#e7ebec url(/static/ucms/img/ico-doc.png) 20px center no-repeat;
 	line-height:1;
 	padding:12px 50px 12px 45px;
-	color:$btnbgcolor;
+	color:var_colors.$btn_bg;
 	font-size:16px;
 	// font-weight:300;
 	display:inline-block;

@@ -1,9 +1,15 @@
-$primary_color : #0074e0;
-$primary_bg : #0047EB;
+$primary_color : #004225;
+$second_color : #003366;
+$warn_color: #CE0134;
+$accent_color: #FCD400;
+$accesary_color: #03C75A; 
 
-$page_bg : #F7F7F8;
+$primary_bg :  $primary_color;
 
-// board list color
+$page_bg : #F5FBF9;
+
+
+// board list color - 게시판
 $bdcolor            : #DDE1E4;
 $bdtopcolor         : #494b50;
 $linkColor          : #000;
@@ -16,24 +22,32 @@ $viewheadBgcolor : #f4f4f4;
 $viewheadcolor : #333333; 
 
 
-$color_black        : #000;
+$color_black        : #1A1A1A;
 $color_white        : #fff;
-$color_deepgray     : #333;
-$color_gray         : #6f7680;
+$color_deepgray     : #8E8E8E;
+$color_gray         : #E4E4E4;
 $color_blue_gray    : #507592;
 $color_orange       : #d62e00;
 $color_dark_orange  : #C64700;
-$color_blue         : $primary_color;
+$color_blue         : #1D5DF1;
 $color_cobalt       : #02728D;
 $color_red          : #c10101;
 $color_green        : #0A892A;
 
-$btnbgcolor : $primary_bg;
-$btnbdcolor: #C6CBD0;
-$btn_bg_red : #e62200;
+$btn_bg : $primary_color;
+$btn_bg_red : $warn_color;
+$btn_bg_blue : #1D5DF1;
 $btn_bg_purple : #6647EB;
 $btn_bg_dark_gray : #72777e;
-$btn_bg_gray : #EBEEF0;
+$btn_bg_gray : $color_gray ;
+
+$btnbdcolor : $primary_color;
+$btnbdcolorgreen : $primary_color;
+$btnbdcolorgray: $color_deepgray;
+$btnbdcolorblue: $color_blue ;
+
+
+
 $sitecolor : $primary_color;
 $color_default: #ffffff;
 $bbsBg : #F7F7F8;

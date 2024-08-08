@@ -1,6 +1,7 @@
 @use '../utiles/var';
 @use '../utiles/var_colors';
 @use '../config/mixin';
+/*
 .s_outer{ 
   $font-size:16px; font-size:$font-size;
   background-color:var_colors.$page_bg;  padding-top:em(48px, $font-size); padding-bottom:em(80px, $font-size); 
@@ -13,4 +14,6 @@
   .container_wrap{
     .board_view{ background-color:var_colors.$page_bg; width:100%; max-width:100%; }
   }
-}
+}*/
+
+.main_bg {background-color:var_colors.$page_bg;}

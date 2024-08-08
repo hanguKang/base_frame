@@ -4,19 +4,50 @@
 @use '../config/mixin';
 @use '../utiles/var_colors';
 
-// input
-$formHeight         : 50px;
-// button
-$btnHeight          : calc($formHeight - 6px);
-//font
-$fontSet            : "Pretendard", "맑은고딕","malgun gothic", AppleGothic, "돋움", dotum, Helvetica, Arial, sans-serif;
-$defaultfontsize    : 16px;
- //h1~h6
-$headingFont        : "Pretendard", "맑은고딕","malgun gothic", sans-serif;
 
+
+// input
+$formHeight         : 56px;
+
+// button
+$btnHeight          : $formHeight; //calc($formHeight - 6px);
+$btnHeightSmall			: calc($formHeight - 8px);
+
+//font
+$fontSet            : "Noto Sans", "맑은고딕", "malgun gothic", AppleGothic, "돋움", dotum, Helvetica, Arial, sans-serif;
+$defaultfontsize    : 16px;
+
+//h1~h6
+$headingFont        : "Noto Sans", "맑은고딕","malgun gothic", sans-serif;
+
+$fs_h1 : 32px;
+$fs_h2 : 28px;
+$fs_h3 : 24px;
+$fs_h4 : 20px;
+
+$fw_h: 600; 
+$lh_h: 1.5;
+
+$fs_p: 16px; 
+$fs_s_p: 14px;
+$lh_p: 1.5; 
+
+$fw_p: 400;
+$fw_l_p: 300;
+
+
+$fs_btn: 18px;
+$fw_btn: 400;
+$fw_b_btn: 500;
+$lh_btn: 1.5; 
+
+
+//이미지 주소
 $imgurl:'../images/common/';
 $imgurl_ico:'../images/ico/';
-$imgurl_date:'../images/20240215/';
+$imgurl_date:'../images/2024/';
+
+
 
 // 반응형 중단점
 $wide : 1301px;
