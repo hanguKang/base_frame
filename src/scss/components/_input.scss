@@ -21,6 +21,9 @@ $inp_width : fn.space_width(306px);
     //input요소 개수에 따른 크기 변화 
     @each $idx in $div_cnt{
       &#{'_div_'+$idx} { position:relative; flex:0 0 fn.flx_equ_spc( $inp_width, $idx, 32px); width:fn.flx_equ_spc( $inp_width, $idx, 32px); height:calc(var.$formHeight - 1px);  
+        // @if $idx == 1 {
+        //   &.left_space {$left_space:36px; margin-left:$left_space; width:calc(fn.flx_equ_spc( $inp_width, $idx, 32px) - $left_space); }
+        // }
         @if $idx !=1 {
           @for $nm from 2 to $idx+1 {
             &:nth-child( #{$nm} ) {margin-left:32px; 
@@ -58,6 +61,7 @@ $inp_width : fn.space_width(306px);
         .f_label{display:flex; width:100%; height:100%; align-items: center; }
       }
       .f_inp_box{ flex:0 0 fn.space_width(em(306px, $font-size)); display:flex; align-items: center; padding-left:em(12px, $font-size);
+        .left_space {$left_space:36px; margin-left:$left_space; flex:0 0 calc($inp_width - $left_space); }
         .f_slct, [class^="f_inp"] { border:1px solid var_colors.$btnbdcolorgray; border-radius:8px;}  
         .f_slct{
           &+.f_ico{ top:50%; transform:translateY(-50%); }
