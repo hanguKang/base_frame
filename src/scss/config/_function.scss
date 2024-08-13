@@ -11,3 +11,7 @@
 @function flx_equ_spc($width, $cnt, $spc){
   @return calc( ( ( $width -  ( $cnt - 1) * $spc ) / $cnt ) );
 }
+@function space_width($remain_spc, $width: 100% ){
+  @return calc( $width - $remain_spc );
+}
+

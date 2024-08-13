@@ -2,12 +2,11 @@
 @use '../utiles/var';
 @use '../config/mixin';
 
-.tit_h1 { font-family:var.$fontSet; font-size:var.$fs_h1; font-weight: var.$fw_h; line-height:1.5; }
-.tit_h2 { font-family:var.$fontSet; font-size:var.$fs_h2; font-weight: var.$fw_h; line-height:1.5; }
-.tit_h3 { font-family:var.$fontSet; font-size:var.$fs_h3; font-weight: var.$fw_h; line-height:1.5; }
-.tit_h4 { font-family:var.$fontSet; font-size:var.$fs_h4; font-weight: var.$fw_h; line-height:1.5; }
-
-
+$font-size:var.$defaultfontsize;
+.tit_h1 {$font-size:var.$fs_h1;  margin-bottom:em(20px, $font-size); font-family:var.$fontSet; font-size:$font-size; font-weight: var.$fw_h; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
+.tit_h2 { font-family:var.$fontSet; font-size:var.$fs_h2; font-weight: var.$fw_h; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
+.tit_h3 { font-family:var.$fontSet; font-size:var.$fs_h3; font-weight: var.$fw_h; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
+ 
 
 // .sub_tit1 {display: inline-block; $font-size:26px; font-size: $font-size; font-weight: 600; line-height:1.5; vertical-align: middle; text-shadow: 0 0 0 #000000;
 //   &:before{

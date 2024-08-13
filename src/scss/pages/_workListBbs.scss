@@ -1,0 +1,103 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+@use 'sass:color';
+
+.f_form{$font-size:var.$defaultfontsize; font-size:$font-size; margin-top:em(64px, $font-size);
+  .f_srch_box{display:flex; flex-wrap: wrap; justify-content: space-between;
+    &.column{display:block;} //열로 나타내기    
+    .f_frm_list{flex:0 0 calc(100% - 138px); display:flex; flex-wrap: wrap;
+      &.column{width:100%; display:block;}//열로 나타내기     
+      .f_frm_wrap{ flex:0 0 25%; position:relative; border:1px solid var_colors.$btnbdcolor; border-left:0 none;
+          &.row{ display: flex; flex-wrap:wrap;
+            .f_label_box{flex: 0 0 em(282px, $font-size); 
+              .f_label{
+                
+              }
+            }
+            .f_inp_box{flex: 0 0 calc( 100% - em(282px, $font-size) ); 
+              .f_slct, .f_inp{
+                
+              }
+            }
+          }
+
+          &.frst{border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
+            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}
+          }
+          &.scnd{}
+          &.thrd{position:relative;
+            input{letter-spacing: -1px;}
+            #day{position:absolute; left:90px; top:50%; transform:translateY(-50%); }
+            
+          }
+          &.last{border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
+            input {letter-spacing: -1px; border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0; }
+          }
+        @include maxWidth($m767){
+          flex:0 0 50%;
+          &.frst{margin-bottom:em(14px, $font-size); }
+          &.scnd{margin-bottom:em(14px, $font-size); border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
+            input {border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;}
+          }
+          &.thrd{border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
+            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}
+          }
+          &.last{}
+        }
+      }
+    }
+    .btn_box{
+      .b-.rad.srch{$font-size:var.$defaultfontsize; font-size:$font-size;  height:em(56px, $font-size); width:em(120px, $font-size); border-radius:calc(var.$formHeight / 2); }
+    }
+    @include maxWidth($m767){
+      .f_frm_list{flex:0 0 100%;
+        .f_frm_wrap{overflow:hidden;}
+      }
+      .btn_box{flex:0 0 100%; margin-top:em(24px, $font-size);
+        .b-.rad.srch-{width: 100%;}
+      }
+      
+    }
+  }
+  .f_register{display:flex; justify-content:end; margin:em(64px, $font-size) 0 em(24px, $font-size) 0; }
+
+  .f_table_wrap{
+    .f_table_data{
+      tbody{
+        .t_dat_td{ 
+          &:has(.f_work_stat){text-align:center;}
+          .f_work_txt { overflow:hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;  word-wrap: break-word;  }
+          .f_work_stat{ display:inline-block; padding:0 em(10px, $font-size); height:auto; border:1px solid var_colors.$btnbdcolorblue;
+            &.w_register{}
+            &.w_payment{}
+            &.w_process{}
+            &.w_rq_cnfrm{}
+            &.w_request{}
+            &.w_rq_pay{}
+            &.w_crfm_pay{}
+            &.w_complete{}
+          }
+        }
+      }
+      @include maxWidth($m767){
+        display:block; width:100%;
+        thead{display:none;}
+        tbody{display:block; width:100%;
+          tr{display:block; width:100%;
+            td{clear:both; display:block; width:100%; height:var.$formHeight; 
+              .f_table_td_tit{float:left; width:35%; height:var.$formHeight; line-height:var.$formHeight; text-align:left; background-color:var_colors.$bdTitBg; }
+              .f_table_td_data{float:left; margin-left:10px; width:calc(65% - 10px); height:var.$formHeight; line-height:var.$formHeight;
+                &.f_work_txt {}
+                &.f_work_stat{display:inline-block; height:auto; width:auto; margin-top:14px; line-height:1.5;}
+              }
+            }
+          }
+          .t_dat_td{
+
+          }
+        }
+      }
+    }
+  }
+}

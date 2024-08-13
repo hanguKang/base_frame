@@ -2,4 +2,50 @@ extends ./templates/layout
 
 block content 
   main
-    .contents 
+    .contents.fc_black
+      .f_top_box
+        .f_head_box
+          h1.tit_h1 프리랜서 결제대금 예치 시스템
+          p.ctns_p 본 시스템은 프리랜서 - 의뢰인 간 
+            span.fc_red 확정된 계약 건에 대해 
+            br.web 
+            | 결제 서비스 지원을 통해 
+            span.fc_red 안정적인 대금 지급과
+            br.web 
+            | 프리랜서의 
+            span.fc_red 작업이력(경력) 
+            | 관리를 지원합니다.
+          p.ctns_p  
+            span.line_block 문의 : 평일 10:00 ~ 17:00
+            span.line_block 
+              span.line_space 시스템 장애 문의 :  070-4610-2538
+              br.mobile
+              | 사용 등 기타 문의 :  02-2133-5591
+          p.p_rd_box 이 시스템은 프리랜서와 발주자 간 
+            br.mobile 
+            | 일감 중계 서비스를 제공하지 않습니다.
+        .f_btn_box
+          a(href).f_btn.admin 
+            span.b-.rect-.md-.ligreen 관리자
+          a(href).f_btn
+            span.b-.rect-.md-.green 프리랜서
+          a(href).f_btn
+            span.b-.rect-.md-.darkblue 발주자
+      .f_btm_box 
+        ul.f_nav_list
+          each img_n, idx in ['ico_system','ico_question', "ico_info", "ico_cntrt"]
+            li.f_nav_item
+              img(src=imgurl+"ico/"+img_n+".png",alt="").f_nav_img
+              case idx  
+                when 0
+                  span.f_txt 시스템 사용방법
+                when 1
+                  span.f_txt 자주 묻는 질문(Q&amp;A)
+                when 2
+                  span.f_txt 개인정보 치리 등 지침 안내
+                when 3
+                  span.f_txt 계약서 등 참고양식
+
+
+
+

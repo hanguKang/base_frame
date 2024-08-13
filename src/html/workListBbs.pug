@@ -1,0 +1,155 @@
+extends ../templates/layout_sub
+
+block styles 
+  link( rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" )
+block scripts
+  script( type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+  script( type="text/javascript" src="../js/daterangepicker.js")
+
+block content 
+  main.page_default 
+    .center_box.tab.f_center_box
+      h1.tit_h1 일감이력 목록
+      form(action="").f_form 
+        filedset.f_srch_box 
+          legend 일감번호, 분야, 계약일, 작업기간별 검색
+          ul.f_frm_list
+            li.f_frm_wrap.top.frst
+              input(type="text" id="work_num" placeholder="일감번호" title="일감번호").f_inp
+              span.f_ico.f_inp_lb.hide
+            li.f_frm_wrap.top.scnd
+              select(id="work_field" title="분야").f_slct
+                option(value="") 분야
+                option(value="part_design") 디자인
+                option(value="part_media") 영상ㆍ사진ㆍ음향
+                option(value="part_it") ITㆍ프로그래밍
+                option(value="part_trans") 통ㆍ번역
+                option(value="part_txt") 문서ㆍ글쓰기
+                option(value="part_guide") 행사-교육ㆍ코칭
+                option(value="part_ect") 기타
+              span.f_ico.f_slct_lb
+            li.f_frm_wrap.btm.thrd
+              input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+              span#day ( 화 )
+                span.hide 요일
+            li.f_frm_wrap.btm.last#dateRagePicker
+              input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp              
+          p.btn_box
+            button.b-.rad-.srch-.green  검색
+        .f_register 
+          button.b-.rad-.default- 일감정보등록  
+        
+        .f_table_wrap
+          table.f_table_data
+            caption.hide 일감이력에 대한 일감번호, 발주자성명, 발주자사업자번호, 계약일, 작업내용, 작업기간, 진행상태별 정보 제공하지
+            colgroup 
+              col.f_table_1 
+              col.f_table_2 
+              col.f_table_3
+              col.f_table_4
+              col.f_table_5
+              col.f_table_6
+              col.f_table_7
+            thead 
+              tr 
+                th.t_dat_th(style="width:12%;")
+                  span 일감번호 
+                th.t_dat_th( style="width:8%;")
+                  span 발주자성명
+                th.t_dat_th( style="width:14%;")  
+                  span 발주자사업자번호
+                th.t_dat_th( style="width:10%;")  
+                  span 계약일
+                th.t_dat_th( style="width:auto;")  
+                  span 작업내용
+                th.t_dat_th( style="width:10%;")  
+                  span 작업기간
+                th.t_dat_th( style="width:8%;")   
+                  span 진행상태
+            tbody
+              tr.none 
+                td.tit_h3(colspan="7") 등록된 일감이 없습니다. 
+              each val, idx in [1,2,3,4,5,6,7,8,9,10]
+                tr 
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 일감번호
+                    span.f_table_td_data.f_work_num A01234567-89101 
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 발주자 성명
+                    span.f_table_td_data.f_work_nam 남궁민정
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 발주자 사업자 번호
+                    span.f_table_td_data.f_work_ph 010-1234-56789
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 계약일
+                    span.f_table_td_data.f_work_dat 2024 - 09 - 30
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 작업 내용
+                    span.f_table_td_data.f_work_txt 최대 글자수가 몇 글자까지 들어갈까요 확인요망합니다123
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 작업기간
+                    span.f_table_td_data.f_work_per 2024 - 09 - 30  ~ 2024 -10 - 31
+                  td.t_dat_td
+                    span.mobile.f_table_td_tit 진행상태
+                    case val
+                      when 1
+                        span.f_table_td_data.f_work_stat.w_register 일감등록
+                      when 2 
+                        span.f_table_td_data.f_work_stat.w_payment 결제요청
+                      when 3 
+                        span.f_table_td_data.f_work_stat.w_process 수행진행
+                      when 4 
+                        span.f_table_td_data.f_work_stat.w_rq_cnfrm 확인요청
+                      when 5 
+                        span.f_table_td_data.f_work_stat.w_result 결과승인
+                      when 6 
+                        span.f_work_stat.w_rq_pay 대금청구
+                      when 7 
+                        span.f_table_td_data.f_work_stat.w_crfm_pay 구매확정
+                      when 8 
+                        span.f_table_td_data.f_work_stat.w_complete 지급완료
+                      default 
+                        span.f_table_td_data.f_work_stat.w_register 일감등록
+                    
+        .f_paging   
+          ul.f_page_list.pagination 
+            li.f_page_item.start.page_item.arr_first
+              a.page_link
+                span.hide 맨 처음 페이지 목록
+            li.f_page_item.prev.page_item
+              a.page_link 
+                | 이전 
+                span.hide 페이지 목록
+            li.f_page_item.prev.page_item.pg_num.f_active
+              a.page_link 1
+            li.f_page_item.page_item.pg_num 
+              a.page_link 2
+            li.f_page_item.page_item.pg_num
+              a.page_link 3
+            li.f_page_item.page_item.pg_num
+              a.page_link 4
+            li.f_page_item.page_item.pg_num
+              a.page_link 5
+            li.f_page_item.page_item.pg_num
+              a.page_link 6
+            li.f_page_item.page_item.pg_num
+              a.page_link 7
+            li.f_page_item.page_item.pg_num
+              a.page_link 8
+            li.f_page_item.page_item.pg_num
+              a.page_link 9
+            li.f_page_item.page_item.pg_num
+              a.page_link 10
+            li.f_page_item.next.page_item
+              a.page_link 
+                | 다음
+                span.hide 페이지 목록
+            li.f_page_item.end.page_item.arr_last
+              a.page_link 
+                span.hide 맨 마지막 페이지 목록
+          ul.f_page_list.pagination.mobile_show 
+            li.f_page_item.prev.page_item.f_active
+              a.page_link 1
+            li.f_page_item.page_item
+              a.page_link 20
+

@@ -2,7 +2,7 @@ $primary_color : #004225;
 $second_color : #003366;
 $warn_color: #CE0134;
 $accent_color: #FCD400;
-$accesary_color: #03C75A; 
+$accesary_color: #009F23; 
 
 $primary_bg :  $primary_color;
 
@@ -14,6 +14,7 @@ $bdcolor            : #DDE1E4;
 $bdtopcolor         : #494b50;
 $linkColor          : #000;
 $cellhovercolor		: #f4f4f4;
+$bdTitBg : $page_bg;
 
 // board view color
 $viewbdColor    : #dddddd;
@@ -31,7 +32,7 @@ $color_orange       : #d62e00;
 $color_dark_orange  : #C64700;
 $color_blue         : #1D5DF1;
 $color_cobalt       : #02728D;
-$color_red          : #c10101;
+$color_red          : $warn_color;
 $color_green        : #0A892A;
 
 $btn_bg : $primary_color;
@@ -43,17 +44,19 @@ $btn_bg_gray : $color_gray ;
 
 $btnbdcolor : $primary_color;
 $btnbdcolorgreen : $primary_color;
-$btnbdcolorgray: $color_deepgray;
+$btnbdcolorgray: $color_deepgray; //버튼 선색상
 $btnbdcolorblue: $color_blue ;
 
 
 
 $sitecolor : $primary_color;
 $color_default: #ffffff;
-$bbsBg : #F7F7F8;
+$bbsBg : #F7F7F8; //게시판 배경색
+$bbsBdTopColor: $primary_color; // 게시판 선색상
+$bbsBdColor: $color_deepgray; // 게시판 선색상
 $btn_tab_color: #26282C;
 
-$input_bg : #EBEEF0;
+$input_bg : #EBEEF0; //폼 요소 배경색
 
 /* font color */
 .fc_black    {color : $color_black}

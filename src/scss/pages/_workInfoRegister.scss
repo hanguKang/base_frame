@@ -1,0 +1,25 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+@use '../config/function' as fn;
+
+.f_form{
+  .f_filed {
+    .tit_h2{ margin-bottom:em(24px, $font-size);}
+    .f_frm_list{$font-size:var.$defaultfontsize; font-size:$font-size; border-top: 2px solid $bbsBdTopColor;
+      .f_frm_item{
+        .f_label_box{ }
+        .f_inp_box{ 
+          [class ^= "f_inp"]{}
+          .f_slct, .f_inp {}  
+          .f_slct{}
+          .f_inp{}
+
+          .btn_box {margin-left:em(20px, $font-size); }
+        }
+        /*@ 만들기 - 읽어야 하기 때문에 css :before같은 가상선택자로 만들 수 없다. */
+        .abs_at { position:absolute; left:-24px; top:50%; transform:translateY(-50%);}
+      }
+    }
+  } 
+}

@@ -1,13 +1,17 @@
+@use '../utiles/var_colors';
 @use '../utiles/var';
+@use '../config/mixin';
+@use 'sass:color';
 
-.pagination{$font-size:16px; font-size:$font-size; box-sizing:border-box; margin:0 auto; margin-top: em(30px); text-align: center; width:100%; max-width:em(1400px, $font-size);
+.pagination{$font-size:18px; font-size:$font-size; box-sizing:border-box; margin:0 auto; margin-top: em(60px, $font-size); padding-bottom:em(82px, $font-size);  text-align: center; width:100%; max-width:em(1200px, $font-size);
+  &.mobile_show{display:none;}
   .page_item{
     display: inline-block;
-    width: em(32px, 14px);
-    height: em(32px, 14px);
-    line-height: em(32px, 14px);
-    margin: 0 em(5px, 14px);
-    border-radius: 50%;
+    width: em(30px, $font-size);
+    height: em(30px, $font-size);
+    line-height: em(32px, $font-size);
+    margin: 0 em(5px, $font-size);
+    border-radius: 4px;
     background-color: #fff;
     color: #696969;
     font-family: "Arial";
@@ -15,26 +19,45 @@
     text-align: center;
     vertical-align: middle;
     transition: all 0.2s;
-    box-shadow: em(12px, 14px) em(12px, 14px) em(22px, 14px) rgba(23,100,232,0.06);
-    background-repeat:no-repeat; background-position:center; background-size:auto;
+    //box-shadow: em(12px, 14px) em(12px, 14px) em(22px, 14px) rgba(23,100,232,0.06);
+    //background-repeat:no-repeat; background-position:center; background-size:auto;
+    background:#fff; 
+    .page_link{display:inline-block; width:100%; height:100%; cursor:pointer; }
+    &.f_active { background:var_colors.$primary_bg; 
+      .page_link{color:#fff; }
+    }
     &.page_arrow{
       background-color:transparent;
       box-shadow:none;
     }
-    &.active{background-color:$primary_bg; color:#fff;}
-    &.l2{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_lft_1_off.png'); 
-      &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_lft_1_on.png');}
+    &.arr_first{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_arr_lft.png'); 
+      //&:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_lft_1_on.png');}
     }
-    &.l1{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_lft_2_off.png'); 
-      &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_lft_2_on.png');}
-    }
-    &.active{}
-    &.r1{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_rt_2_off.png'); 
-      &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_rt_2_on.png');}
-    }
-    &.r2{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_rt_1_off.png'); 
-      &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_rt_1_on.png');}
+    // &.arr_pre{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_lft_2_off.png'); 
+    //   &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_lft_2_on.png');}
+    // }
+    
+    // &.arr_nxt{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_page_arr_rt_2_off.png'); 
+    //   &:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_rt_2_on.png');}
+    // }
+    &.arr_last{background-color: transparent; background-image:url(var.$imgurl_ico+'ico_arr_rgt.png'); 
+      //&:hover{background-image:url(var.$imgurl_ico+'ico_page_arr_rt_1_on.png');}
     }
 
   }
+  //서올노동포털에만 해당되는 이야기
+  @include mixin.maxWidth($m767){
+    padding-bottom:10px;
+    &.mobile_show{display:block;} //이런 클래스도 삭제하는게 좋다. 
+    &:nth-child(2){margin-top:0; margin-bottom:40px; 
+      li:last-child{position:relative;
+        &:before{font-size:26px; position:absolute; content:"/"; left:em(-6px, $font-size); top:50%; transform:translateY(-50%);  }
+      }
+    }
+    .page_item{
+      &.pg_num{display:none;}
+    }
+  }
 }// .pagination End   
+
+

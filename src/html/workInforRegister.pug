@@ -1,0 +1,144 @@
+extends ../templates/layout_sub
+
+block content 
+  main.page_default 
+  .center_box.tab.f_center_box
+    h1.tit_h1 일감정보 등록
+    form(action="").f_form 
+      filedset.f_filed 
+        h2.tit_h2 분야 및 일감정보
+        ul.f_frm_list
+          li.f_frm_item.f_frm_wrap
+            .f_label_box
+              label.f_label(for="f_field") 분야
+            .f_inp_box.f_frm_wrap
+              .f_inp_div_1
+                select#f_filed.f_slct.plus1.plus2.plus3(name="f_field")
+                  option 분야를 선택해 주세요
+                  option(value="") 분야
+                  option(value="part_design") 디자인
+                  option(value="part_media") 영상ㆍ사진ㆍ음향
+                  option(value="part_it") ITㆍ프로그래밍
+                  option(value="part_trans") 통ㆍ번역
+                  option(value="part_txt") 문서ㆍ글쓰기
+                  option(value="part_guide") 행사-교육ㆍ코칭
+                  option(value="part_ect") 기타
+                span.f_ico
+                
+          li.f_frm_item.f_frm_wrap
+            .f_label_box
+              label.f_label(for="work_no") 일감번호
+            .f_inp_box
+              .f_inp_div_1
+                input#work_no.f_inp.plus1.plus2.plus3(name="work_no" type="text" placeholder="등록 이후 자동 생성됩니다." readonly )
+      filedset.f_filed 
+        h2.tit_h2 일감정보
+        ul.f_frm_list.f_frm_wrap
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="business_nm") 발주자 성명(사업자명 )
+            .f_inp_box
+              .f_inp_div_1
+                input#business_nm.f_inp.plus1.plus2.plus3(name="business_nm" type="text" placeholder="성명을 입력해주세요.")
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="tel_no") 전화번호
+            .f_inp_box
+              .f_inp_div_1
+                input#tel_no.f_inp.plus1.plus2.plus3(name="tel_no" type="text" placeholder="예) 01012345678")
+          li.f_frm_item.f_frm_wrap
+            .f_label_box
+              label.f_label(for="email") 메일주소
+            .f_inp_box
+              .f_inp_div_3
+                input#email_id.f_inp.plus1.plus2.plus3(name="email_id" type="text" title="메일주소 중 아이디")              
+              .f_inp_div_3.email
+                .abs_at @
+                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트")
+              .f_inp_div_3.email
+                select#email_slct.f_slct.plus1.plus2.plus3(name="email_slct" type="text" title="메일주소 사이트 선택")
+                  option(value="") 직접입력
+                  option(value="naver") naver.com
+                .f_ico
+          li.f_frm_item.f_frm_wrap
+            .f_label_box
+              label.f_label(for="business_no") 사업자등록번호
+            .f_inp_box
+              .f_inp_div_3
+                input#business_no.f_inp.plus1.plus2.plus3(name="business_no" type="text" title="사업자등록번호 3자리중 1번째")
+              .f_inp_div_3
+                input#business_no_2.f_inp.plus1.plus2.plus3(name="business_no" type="text" title="사업자등록번호 3자리중 2번째")
+              .f_inp_div_3
+                input#business_no_3.f_inp.plus1.plus2.plus3(name="business_no" type="text" title="사업자등록번호 3자리중 3번째")
+              p.btn_box
+                button.b-.rad-.srch-.wt  조회
+        ul.f_frm_list.f_frm_wrap
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="free_nm") 프리랜서 성명
+            .f_inp_box
+              .f_inp_div_1
+                input#free_nm.f_inp.plus1.plus2.plus3(name="free_nm" type="text" placeholder="성명을 입력해주세요.")
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="tel2_no") 전화번호
+            .f_inp_box
+              .f_inp_div_1
+                input#tel2_no.f_inp.plus1.plus2.plus3(name="tel2_no" type="text" placeholder="예) 01012345678")
+              .f_chk
+                input#chk_sns(type="checkbox" name="chk_sns")
+                label.chk_lb [선택] SNS 수신동의여부
+          li.f_frm_item.f_frm_wrap
+            .f_label_box
+              label.f_label(for="email2") 메일주소
+            .f_inp_box
+              .f_inp_div_3
+                input#email2_id.f_inp.plus1.plus2.plus3(name="email_id2" type="text" title="메일주소 중 아이디")              
+              .f_inp_div_3.email
+                .abs_at @
+                input#email_site2.f_inp.plus1.plus2.plus3(name="email_site2" type="text" title="메일 주소 중 사이트")
+              .f_inp_div_3.email
+                select#email_slct2.f_slct.plus1.plus2.plus3(name="email_slct2" type="text" title="메일주소 사이트 선택")
+                  option(value="") 직접입력
+                  option(value="naver") naver.com
+                .f_ico    
+        ul.f_frm_list.f_frm_wrap
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="contract_date") 계약일
+            .f_inp_box
+              .f_inp_div_1
+                input#contract_date.f_inp.date.plus1.plus2.plus3(name="contract_date" type="date")      
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="work_cnts") 작업내용
+            .f_inp_box
+              .f_inp_div_1
+                input#work_cnts.f_inp.plus1.plus2.plus3(name="work_cnts" type="text" placeholder="작업내용을 입력해주세요.")
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="contract_range") 작업기간
+            .f_inp_box
+              .f_inp_div_2
+                input#contract_range.f_inp.date.plus1.plus2.plus3(name="contract_range" type="date")
+              .f_inp_div_2
+                input#contract_range2.f_inp.date.plus1.plus2.plus3(name="contract_range2" type="date")
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="contract_price") 계약금액
+            .f_inp_box
+              .f_inp_div_1
+                span.f_txt 금
+                input#contract_price.f_inp.plus1.plus2.plus3(name="contract_price" type="text" placeholder="금액을 입력해주세요.")
+              p.f_txt 원
+          li.f_frm_item
+            .f_label_box
+              label.f_label(for="contract_file") 첨부(계약서)
+            .f_inp_box
+              .f_inp_div_1
+                input#contract_file.f_inp.plus1.plus2.plus3(name="contract_file" type="text" placeholder="성명을 입력해주세요.")
+
+
+
+    
+        

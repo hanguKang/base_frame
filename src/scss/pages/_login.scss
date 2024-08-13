@@ -1,0 +1,50 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+@use 'sass:color';
+
+.sub{
+  .v_100{ display:flex; justify-content: center; align-items: center; height:100vh;
+    .f_center_box{ 
+      .active{
+        form{$font-size:var.$defaultfontsize; font-size:$font-size; display:flex; max-width:1080px; width:100%; margin:0 auto;
+          .log_box{width:em(540px, $font-size); padding:em(50px, $font-size); background-color:#fff; border-radius:em(8px, $font-size);
+            .tit_h1 {text-align:center; color:var_colors.$color_black;}
+          }
+          .user{
+            .login_inp{ border: 1px solid #dedede; border-bottom: 0;
+              input{display:block; width:100%; border-bottom: 1px solid #dedede; padding-left: 45px; line-height: 57px; height: 57px; font-size: 16px;
+                &:first-child{background:url(../images/ico/ico_id.png) no-repeat 16px 50%; }
+                &:nth-child(2){background:url(../images/ico/ico_pw.png) no-repeat 16px 50%; }
+              }
+            }
+            .login_btn{ margin-top:em(20px);
+              .f_btn{ display: flex; justify-content: center; align-items:center; height: 60px; color: #fff; background-color: #2b55c0; font-size: 1rem; color:#fff; text-align:center; font-weight:600;
+              }
+            }
+            .manage{margin-top:em(20px);
+              li{    display: inline-block; position: relative; padding: 0 28px;
+                &:not(:first-child):before{ content: ''; display: block; width: 1px; height: 14px; background-color: #999; position: absolute; left: 0; top: 50%; margin-top: -6px; }
+              }
+            }
+          }
+          .sns{ position:relative;
+            .tit_h1 {$font-size:32px; margin-bottom:em(80px, $font-size); }
+            &:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); height:calc(100% - 100px); border-left:1px solid var_colors.$bdcolor; }
+            li{margin-bottom:em(16px); height:em(66px); border-radius:8px; 
+              .f_btn{display:flex; justify-content:center; align-items:center; height:100%; font-weight:600;  }
+            }
+            .kakao{background:#f7d901 url(../images/ico/ico_kakao.png) no-repeat 20px 50%; 
+              .f_btn{ color:var_colors.$color_black;}
+            }
+            .naver{background:#00bf18 url(../images/ico/ico_naver.png) no-repeat 20px 50%;;
+              .f_btn{color:#fff;}
+            }
+           
+          }
+        }
+      }
+    }
+  }
+}
+

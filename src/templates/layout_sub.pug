@@ -4,8 +4,7 @@ html(lang="ko")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no")
         link(rel="stylesheet", href="../css/style.css")
-        block styles 
-        block scripts
+        block styles
         title Document
     body 
         include ../partials/sub_head
@@ -18,6 +17,7 @@ html(lang="ko")
             //include ../partials/footer
 
         script(src="https://code.jquery.com/jquery-3.7.1.js",integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=",crossorigin="anonymous")
+        block scripts
         script(src="../js/main.js" defer  )
         //script(src="../js/test.js", type="module")
         //script(src="../js/owl.carousel.js", type="module")

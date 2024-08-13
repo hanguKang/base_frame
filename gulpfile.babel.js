@@ -42,7 +42,7 @@ const routes = {
     watch: "src/scss/**/*.scss",
   }, 
   js: {
-    src: ["src/js/main.js"], //["src/js/main.js", "src/js/owl.carousel.js"]
+    src: ["src/js/main.js", "src/js/daterangepicker.js"], //["src/js/main.js", "src/js/owl.carousel.js"]
     dest: "build/js",
     watch: "src/js/**/*.js",
   },

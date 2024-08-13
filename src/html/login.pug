@@ -1,0 +1,33 @@
+extends ../templates/layout_sub
+
+block content 
+  main.v_100.login
+    .center_box.tab.f_center_box
+      .active
+        form(name="loginform" action="/portal/sprngscrty/login.do" method="POST")
+          .user.log_box
+            h3.tit_h1 회원 로그인
+            .login_inp
+                input(type="text" name="id" id="login_id" placeholder="아이디" title="아이디" value="")
+                input(type="password" name="password" id="login_pw" placeholder="비밀번호" title="비밀번호")
+                input(type="hidden" name="nm" id="nm")          
+            ul.login_btn
+                li
+                  a(href="#" onclick="login_submit(); return false;").f_btn 로그인                            
+            ul.manage
+                //<li><a href="/portal/mber/join.do">회원가입</a></li> 14세미만 처리제외로 step2 단계로 이동(20210307)
+                li
+                  a(href="/portal/mber/join_certify.do") 회원가입
+                li
+                  a(href="/portal/mber/selectFindId.do") 아이디 찾기
+                li
+                  a(href="/portal/mber/selectPwReset.do") 비밀번호 재발급
+          .sns.log_box
+            h3.tit_h1 SNS 로그인
+            ul
+              li.kakao
+                a(href).f_btn 카카오 로그인
+              li.naver 
+                a(href).f_btn 네이버 로그인
+              
+                  

@@ -2,81 +2,115 @@
 @use '../utiles/var_colors';
 @use '../config/mixin';
 
+//term_first
 $btn:"[class^=b-]";
-span#{$btn} { $font-size:var.$fs_btn; box-sizing:border-box; display:inline-block; font-size:em($font-size); line-height:1.5; padding:em(26px, $font-size) em(26px, $font-size); height:auto; letter-spacing:-1px; background-color:var_colors.$btn_bg; border-radius:em(8px, $font-size); text-align:center;
-	//사각형 
-	&.rect{border-radius:em(8px);
-		&.sm{width:em(350px, $font-size); height:em(74px, $font-size);}
-		&.md{width:em(488px, $font-size); height:em(108px, $font-size); }
-		&.lg{width:em(688px, $font-size); height:em(108px, $font-size); }
-	}
-	&.btn-green { background-color:var_colors.$btn_bg; }
-	&.btn-blue{background-color:var_colors.$btn_bg_blue;}
-	&.btn-red { background-color:var_colors.$btn_bg_red;}
+//term_second
+$rect: 'rect-';
+$rad: 'rad-';
+//term_third
+$sm: 'sm-';
+$md: 'md-';
+$lg: 'lg-';
+//term_fourth
+$green: 'green';
+$blue: 'blue';
+$darkblue: 'darkblue';
+$red: 'red';
+$ligreen: 'ligreen';
+$srch: 'srch-';
+$default: 'default-';
+$brd : 'brd-';
+//색상
+.wt{background-color:#fff; border:1px solid var_colors.$btnbdcolorgray;}
+.grn{background-color:var_colors.$primary_bg; border:1px solid var_colors.$btnbdcolorgreen;}
+.gry{background-color:var_colors.$color_gray ; border:1px solid var_colors.$color_gray;}
 
-	//기본
-	&.rad{border-radius: calc(em(56px, $font-size) / 2); height:var.$formHeight;
-		&.srch{width:em(120px, $font-size); }
-		&.default{width:em(140px, $font-size);}
-		&.bd{width:em(85px, $font-size); height:em(46px, $font-size); }
-		//색상
-		&.wt{background-color:#fff; border:1px solid var_colors.$btnbdcolorgray;}
-		&.grn{background-color:var_colors.$primary_bg; border:1px solid var_colors.$btnbdcolorgreen;}
-		&.gry{background-color:var_colors.$color_gray ; border:1px solid var_colors.$color_gray;}
+#{$btn}{ $font-size:var.$fs_btn; font-size:em($font-size); box-sizing:border-box; display:inline-block;  line-height:1.5;  height:auto; letter-spacing:-1px; background-color:var_colors.$btn_bg; border-radius:em(8px, $font-size); text-align:center; 
+	//사각형 
+	&.#{$rect}{border-radius:em(8px); font-weight:600;	
+		&.#{sm} {}
+		&.#{$md} {$font-size:28px; font-size:$font-size; width:em(488px, $font-size); height:em(108px, $font-size); line-height:em(108px, $font-size);}
+		&.#{$lg} {$font-size:28px; font-size:$font-size; width:em(688px, $font-size); height:em(108px, $font-size);  line-height:em(108px, $font-size); }
+
+		@include mixin.maxWidth($tab){
+			&.#{$md} {$font-size:28px; font-size:$font-size; width:em(488px, $font-size); height:em(108px, $font-size); line-height:em(108px, $font-size);}
+		}
+
+		@include mixin.maxWidth($m767){
+			&.#{$md} {$font-size:18px; font-size:$font-size; margin-top:em(26px, $font-size); width:100%; height:em(74px, $font-size); line-height:em(74px, $font-size);}
+		}
 	}
+	//라운드
+	&.#{$rad}{$font-size:var.$fs_btn; font-size:em($font-size); border-radius: calc(em(56px, $font-size) / 2);  height:var.$formHeight;
+		&.#{$srch}{width:em(120px, $font-size); }
+		&.#{$default}{width:em(140px, $font-size); background-color:#fff; border:1px solid var_colors.$btnbdcolor; height:calc( var.$formHeight - 2px); }
+		&.#{$brd}{width:em(85px, $font-size); height:em(46px, $font-size); }
+		@include maxWidth($m767){
+			&.#{$srch}{width:100%; }
+		}
+	}
+
+	&.#{$green} { background-color:var_colors.$btn_bg; color:#fff;}
+	&.#{$blue} {background-color:var_colors.$btn_bg_blue; color:#fff;}
+	&.#{$darkblue} {background-color:var_colors.$second_color; color:#fff;}
+	&.#{$red} { background-color:var_colors.$btn_bg_red; color:#fff;}
+	&.#{$ligreen} {background-color:var_colors.$accesary_color; color:#fff;}
+	&.wt {background-color:#fff; color:var_colors.$color_black;}
+
+	
 }       
 
-#{$btn}{$font-size:$fs_btn;
-	text-indent:0;
-	display:inline-block;
-	height: em(var.$btnHeight);
-	padding: calc(( var.$btnHeight - var.$defaultfontsize ) / 4) 12px;
-	font-size:var.$defaultfontsize;
-	line-height: 1.5;
-	text-align:center;
-	color:#fff;
-	background-color:var_colors.$btn_bg;
-	border:none;
-	border-radius:0;
-	vertical-align:middle;
-	// @include breakpoint($md){
-	// 	min-width:88px;
-	// 	// padding: ($formHeight - 2 - $defaultfontsize) / 2 0;
-	// }
-	&:before{
-		display: inline-block;
-		content: '';
-		height:100%;
-		vertical-align:middle;
-	}
-	&:hover,
-	&:focus{
-		text-decoration:underline;
-	}
-	&.xlg{
-		padding:16px 0;
-		min-width:140px;
-		height:em(64px,$font-size);
-		// font-weight:300;
-	}
-	&.lg{
-		padding:8px 16px;
-		line-height: em(var.$btnHeight - 16px ) //패딩 상하를 뺌
-		// font-size:18px;
-	}
-	&.sm{
-		padding:5px;
-		line-height: em(var.$btnHeight - 10px ) //패딩 상하를 뺌
-	}
-	&.green{
-		background-color:#22b24c !important;
-	}
-	&.w{
-		// @include breakpoint($md){
-		// 	width:140px;
-		// }
-	}
-}
+// #{$btn}{$font-size:$fs_btn;
+// 	text-indent:0;
+// 	display:inline-block;
+// 	height: em(var.$btnHeight);
+// 	padding: calc(( var.$btnHeight - var.$defaultfontsize ) / 4) 12px;
+// 	font-size:var.$defaultfontsize;
+// 	line-height: 1.5;
+// 	text-align:center;
+// 	color:#fff;
+// 	background-color:var_colors.$btn_bg;
+// 	border:none;
+// 	border-radius:0;
+// 	vertical-align:middle;
+// 	// @include breakpoint($md){
+// 	// 	min-width:88px;
+// 	// 	// padding: ($formHeight - 2 - $defaultfontsize) / 2 0;
+// 	// }
+// 	&:before{
+// 		display: inline-block;
+// 		content: '';
+// 		height:100%;
+// 		vertical-align:middle;
+// 	}
+// 	&:hover,
+// 	&:focus{
+// 		text-decoration:underline;
+// 	}
+// 	&.xlg{
+// 		padding:16px 0;
+// 		min-width:140px;
+// 		height:em(64px,$font-size);
+// 		// font-weight:300;
+// 	}
+// 	&.lg{
+// 		padding:8px 16px;
+// 		line-height: em(var.$btnHeight - 16px ) //패딩 상하를 뺌
+// 		// font-size:18px;
+// 	}
+// 	&.sm{
+// 		padding:5px;
+// 		line-height: em(var.$btnHeight - 10px ) //패딩 상하를 뺌
+// 	}
+// 	&.green{
+// 		background-color:#22b24c !important;
+// 	}
+// 	&.w{
+// 		// @include breakpoint($md){
+// 		// 	width:140px;
+// 		// }
+// 	}
+// }
 
 
 #{$btn}.t{padding-left:5px;padding-right:5px;min-width:0;border-radius:5px;white-space:nowrap;}

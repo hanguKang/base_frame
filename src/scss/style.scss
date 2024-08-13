@@ -28,6 +28,10 @@
 @import './common/pagination';
 @import './components/banner';
 @import './pages/index';
+@import './pages/login';
+@import './pages/workListBbs';
+@import './pages/workInfoRegister';
+
 @import './pages/term';
 @import './pages/select_hotissue_jumin';
 @import './pages/updateFormObjectiveVote';
@@ -40,15 +44,5 @@
 
 
 
-header+img{background:black;}
-body{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
-.pagination{display:block;}
 
-.mobile{display:none;}
-@media only screen and ( max-width: 720px )  {
-  .web{display:none;}
-}
 
-@media only screen and (pointer:coarse) and (max-height:720px) {
-  .web{display:none;}
-}
