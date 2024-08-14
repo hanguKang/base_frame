@@ -1,8 +1,8 @@
 @charset 'UTF-8';
 @import './font/fonts';
 @import './common/bootcustom_var';
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import './common/bootcustom_style';
+//@import '../../node_modules/bootstrap/scss/bootstrap';
+//@import './common/bootcustom_style';
 @import './config/function';
 @import './config/mixin';
 @import './config/reset';
@@ -31,6 +31,7 @@
 @import './pages/login';
 @import './pages/workListBbs';
 @import './pages/workInfoRegister';
+@import './pages/freelancerPayDeposit';
 
 @import './pages/term';
 @import './pages/select_hotissue_jumin';

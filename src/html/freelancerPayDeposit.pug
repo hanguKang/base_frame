@@ -9,8 +9,48 @@ block scripts
 block content 
   main.page_default 
     .center_box.tab.f_center_box
-      h1.tit_h1 일감이력 목록
-      form(action="").f_form 
+      h1.tit_h1 프리랜서 결제대금 예치 현황
+      form(action="").f_form.freelancer_box 
+        .f_over_wrap
+          ul.f_work_stat_list
+            li.f_work_stat_item.f_stat_total 
+              span.f_stat_tit 일감등록현황
+              strong.f_stat_no 40
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_regi
+              span.f_stat_tit 일감등록
+                em.f_stat_rate (14%)
+              strong.f_stat_no 14
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_request
+              span.f_stat_tit 결제요청
+                em.f_stat_rate (10%)
+              strong.f_stat_no 10
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_complete1
+              span.f_stat_tit 결제완료
+                em.f_stat_rate (10%)
+              strong.f_stat_no 10
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_pay_request
+              span.f_stat_tit 대금청구
+                em.f_stat_rate (13%)
+              strong.f_stat_no 03
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_confirm
+              span.f_stat_tit 구매확정
+                em.f_stat_rate (12%)
+              strong.f_stat_no 02
+                span.f_st_txt 건
+            li.f_work_stat_item.f_stat_pay_complete
+              span.f_stat_tit 지급완료
+              strong.f_stat_no 01
+                span.f_st_txt 건
+        ul.f_check_stat_list 
+          li.f_check_stat_item.check_current 
+            span.b-.rad-.default-.active 현황조회
+          li.f_check_stat_item.check_sns 
+            span.b-.rad-.default- sns발송조회
         filedset.f_srch_box 
           legend 일감번호, 분야, 계약일, 작업기간별 검색
           ul.f_frm_list
@@ -36,8 +76,6 @@ block content
               input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp              
           p.btn_box
             button.b-.rad-.srch-.green  검색
-        .f_register 
-          button.b-.rad-.default-.wt 일감정보등록  
         
         .f_table_wrap
           table.f_table_data
@@ -54,18 +92,18 @@ block content
               tr 
                 th.t_dat_th(style="width:12%;")
                   span 일감번호 
-                th.t_dat_th( style="width:8%;")
-                  span 발주자성명
-                th.t_dat_th( style="width:14%;")  
-                  span 발주자사업자번호
-                th.t_dat_th( style="width:10%;")  
-                  span 계약일
+                th.t_dat_th( style="width:10%;")
+                  span 발송일련번호
+                th.t_dat_th( style="width:6%;")  
+                  span 수신인
+                th.t_dat_th( style="width:12%;")  
+                  span 수신번호
                 th.t_dat_th( style="width:auto;")  
-                  span 작업내용
-                th.t_dat_th( style="width:10%;")  
-                  span 작업기간
+                  span 발송내용
+                th.t_dat_th( style="width:8%;")  
+                  span 발송날짜
                 th.t_dat_th( style="width:8%;")   
-                  span 진행상태
+                  span 발송상태
             tbody
               tr.none 
                 td.tit_h3(colspan="7") 등록된 일감이 없습니다. 
@@ -75,41 +113,28 @@ block content
                     span.mobile.f_table_td_tit 일감번호
                     span.f_table_td_data.f_work_num A01234567-89101 
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 발주자 성명
-                    span.f_table_td_data.f_work_nam 남궁민정
+                    span.mobile.f_table_td_tit 발송일련번호
+                    span.f_table_td_data.f_work_nam 012-34-56789
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 발주자 사업자 번호
-                    span.f_table_td_data.f_work_ph 010-1234-56789
+                    span.mobile.f_table_td_tit 수신인
+                    span.f_table_td_data.f_work_ph 남궁민정
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 계약일
-                    span.f_table_td_data.f_work_dat 2024 - 09 - 30
+                    span.mobile.f_table_td_tit 수신번호
+                    span.f_table_td_data.f_work_dat 010-1234-56789
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 작업 내용
+                    span.mobile.f_table_td_tit 발송내용
                     span.f_table_td_data.f_work_txt 최대 글자수가 몇 글자까지 들어갈까요 확인요망합니다123
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 작업기간
-                    span.f_table_td_data.f_work_per 2024 - 09 - 30  ~ 2024 -10 - 31
+                    span.mobile.f_table_td_tit 발송날짜
+                    span.f_table_td_data.f_work_per 2024-09-30
                   td.t_dat_td
-                    span.mobile.f_table_td_tit 진행상태
-                    case val
+                    span.mobile.f_table_td_tit 발송상태
+                    case val % 2 
                       when 1
-                        span.f_table_td_data.f_work_stat.w_register 일감등록
-                      when 2 
-                        span.f_table_td_data.f_work_stat.w_payment 결제요청
-                      when 3 
-                        span.f_table_td_data.f_work_stat.w_process 수행진행
-                      when 4 
-                        span.f_table_td_data.f_work_stat.w_rq_cnfrm 확인요청
-                      when 5 
-                        span.f_table_td_data.f_work_stat.w_result 결과승인
-                      when 6 
-                        span.f_work_stat.w_rq_pay 대금청구
-                      when 7 
-                        span.f_table_td_data.f_work_stat.w_crfm_pay 구매확정
-                      when 8 
-                        span.f_table_td_data.f_work_stat.w_complete 지급완료
-                      default 
-                        span.f_table_td_data.f_work_stat.w_register 일감등록
+                        span.f_table_td_data.f_work_stat.w_register.f_sucss 발송완료
+                      when 0 
+                        span.f_table_td_data.f_work_stat.w_payment.f_fail 발송실패
+                     
                     
         .f_paging   
           ul.f_page_list.pagination 

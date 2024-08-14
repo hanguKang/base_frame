@@ -3,8 +3,11 @@
 @use '../config/mixin';
 @use '../config/function' as fn;
 
-.f_form{
+.f_form{ margin-bottom:em(80px);
   .f_filed {
+    .f_head_box{display: flex; justify-content: space-between; align-items:center;
+      .f_work_status{padding:em(4px) em(10px); border:1px solid var_colors.$color_blue; font-weight:600; color:var_colors.$color_blue;}
+    }
     .tit_h2{ margin-bottom:em(24px, $font-size);}
     .f_frm_list{$font-size:var.$defaultfontsize; font-size:$font-size; border-top: 2px solid $bbsBdTopColor;
       .f_frm_item{
@@ -15,11 +18,37 @@
           .f_slct{}
           .f_inp{}
 
+          .f_txt_prev{color: var_colors.$color_black; line-height:1.5;}
           .btn_box {margin-left:em(20px, $font-size); }
         }
         /*@ 만들기 - 읽어야 하기 때문에 css :before같은 가상선택자로 만들 수 없다. */
         .abs_at { position:absolute; left:-24px; top:50%; transform:translateY(-50%);}
       }
     }
+    @include mixin.maxWidth($m767){
+      &:last-of-type { margin-bottom:em(12px, $font-size);}
+    }
   } 
+  .f_submit_box{$font-size:var.$fs_btn; font-size:$font-size; display:flex; justify-content:space-between; align-items: center;
+    .f_crud_btn_box{
+      .b-{margin-right:em(8px, $font-size); }
+    }
+    .f_ctrl_btn_box{
+      .b-{
+        &:first-child{margin-right:em(20px, $font-size);}
+      }
+    }
+
+    @include mixin.maxWidth($m767){
+      display:block;
+      .f_crud_btn_box{text-align:right; margin-bottom:em(60px, $font-size);
+        .b-{$font-size:var.$defaultfontsize; font-size:$font-size; margin-right:em(8px, $font-size); width:em(68px, $font-size); height:em(38px, $font-size); color:var_colors.$color_black;}
+      }
+      .f_ctrl_btn_box{
+        .b-{ display:block; width:100%; margin-bottom:em(16px, $font-size);
+          &:first-child{margin-right:em(20px, $font-size);}
+        }
+      }
+    }
+  }
 }

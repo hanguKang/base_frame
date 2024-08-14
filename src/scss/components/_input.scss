@@ -7,8 +7,14 @@
 $div_cnt : 1, 2, 3, 4; 
 //셀렉트 박스
 $inp_width : fn.space_width(306px);
+
+//일반적인 form요소 
+  //전체 form요소를 라인별로 지정
 .f_frm_wrap{position:relative;
+  //라인 안에 존재하는 form요소.
+    //셀렉트요소
   .f_slct , 
+    //인풋요소
   .f_inp {$font-size:var.$defaultfontsize; font-size:$font-size; height:var.$formHeight; width:100%; 
     &[type="date"], &.date{padding-right:em(10px, $font-size); background:#fff url(var.$imgurl_ico+'ico_calend.png') no-repeat 96% 50%;
       &::-webkit-clear-button, 
@@ -18,12 +24,17 @@ $inp_width : fn.space_width(306px);
       // input의 어떤 곳을 클릭해도 캘린더를 클릭한 것과 같도록 함
       &::-webkit-calendar-picker-indicator{position:absolute; left:0; top:0; width: 100%; height:100%; background:transparent; color:transparent;}
     }
-    //input요소 개수에 따른 크기 변화 
+    //form요소들을 각각 감싸는 div상자 
+    //form요소를 감싸는 상자 - (.f_inp 내부의 요소가 아니다. .f_frm_wrap의 자손요소이다.  ex> .f_frm_wrap  .f_inp_div_1 )
+    // 최대 분할되었을 때 4개라고 생각하고 작성한다. 2개라면 pug에서 .f_inp_div_2 라고 2개의 요소에 클래스 지정한다. 3개면, .f_inp_div_3라고 지정한다. .....
     @each $idx in $div_cnt{
-      &#{'_div_'+$idx} { position:relative; flex:0 0 fn.flx_equ_spc( $inp_width, $idx, 32px); width:fn.flx_equ_spc( $inp_width, $idx, 32px); height:calc(var.$formHeight - 1px);  
+      //부모요소의 이름 합치기 + 각 form요소의 개수마다 하나의 크기 == 1/n 지정
+      &#{'_div_'+$idx} { position:relative; flex:0 0 fn.flx_equ_spc( $inp_width, $idx, 32px); width:fn.flx_equ_spc( $inp_width, $idx, 32px); height:var.$formHeight;  
+        &:has( .f_txt_prev ){overflow:visible;}
         // @if $idx == 1 {
         //   &.left_space {$left_space:36px; margin-left:$left_space; width:calc(fn.flx_equ_spc( $inp_width, $idx, 32px) - $left_space); }
         // }
+        @if $idx == 1 { overflow:hidden; }
         @if $idx !=1 {
           @for $nm from 2 to $idx+1 {
             &:nth-child( #{$nm} ) {margin-left:32px; 
@@ -34,7 +45,25 @@ $inp_width : fn.space_width(306px);
         }
         
         .f_inp.plus1.plus2.plus3, 
-        .f_slct.plus1.plus2.plus3 {width:100%; border:0 none; height:98%; border:0 none;}
+        .f_slct.plus1.plus2.plus3 {width:100%;  height:98%; border:0 none;}
+
+        @include mixin.maxWidth($m767){
+          flex:0 0 100%; width:100%;
+
+          @if $idx == 1 {
+            &:nth-child( #{$idx} ) ~ .btn_box {
+              position:absolute; top:6px; right:16px; height:em(44px, $font-size); 
+              .b-{height:100%; line-height:em(38px, $font-size);}
+            }
+            &:first-child + .f_chk {margin-top:em(10px, $font-size);}
+          }
+          @else if $idx > 1 { position:relative; flex:0 0 fn.flx_equ_spc( 100% , $idx, 32px); 
+            &:nth-child( #{$idx} ) + .btn_box {
+              position:absolute; top:6px; right:16px; height:em(44px, $font-size); 
+              .b-{height:100%;}
+            }
+          }
+        }
       }
     } 
   }
@@ -50,25 +79,45 @@ $inp_width : fn.space_width(306px);
       
     }
   }
-
+  input[type="file"] {position: absolute;width: 1px;height: 1px;margin: -1px;font-size: initial;clip: rect(0 0 0 0);}
+  .f_file { }
+  .f_file_btn {line-height:$formHeight; }
+  input[type="file"]:focus ~ .f_file_btn, .f_file_btn:hover {outline:2px solid #000; background: var_colors.$page_bg;}
 }
 
+ 
 .f_filed {display:block; $font-size:var.$defaultfontsize; font-size:$font-size;  margin-bottom:em(64px, $font-size);
-
-  .f_frm_list{$font-size:var.$defaultfontsize; font-size:$font-size; border-top: 1px solid $bbsBdTopColor;
-    .f_frm_item{display:flex; height:em(80px, $font-size); border-bottom:1px solid var_colors.$bbsBdColor; color:var_colors.$color_black;
+  .f_frm_list{ $font-size:var.$defaultfontsize; font-size:$font-size; border-top: 1px solid $bbsBdTopColor;
+    .f_frm_item{ display:flex; flex-wrap:wrap; height:auto; border-bottom:1px solid var_colors.$bbsBdColor; color:var_colors.$color_black;
       .f_label_box{flex:0 0 em(282px, $font-size); background-color:var_colors.$bdTitBg; padding-left:em(60px, $font-size);
         .f_label{display:flex; width:100%; height:100%; align-items: center; }
       }
-      .f_inp_box{ flex:0 0 fn.space_width(em(306px, $font-size)); display:flex; align-items: center; padding-left:em(12px, $font-size);
-        .left_space {$left_space:36px; margin-left:$left_space; flex:0 0 calc($inp_width - $left_space); }
+      .f_inp_box{ flex:0 0 fn.space_width(em(306px, $font-size)); display:flex; flex-wrap:wrap; align-items: center; padding:em(13px, $font-size) 0 em(13px, $font-size) em(12px, $font-size);
+        .err_msg{flex:0 0 100%; margin-top:em(10px, $font-size); padding-left: em(28px, $font-size); background:url(var.$imgurl_ico+'ico_err.png') no-repeat 0 50%; color:var_colors.$warn_color; font-weight:600; }
+        .left_space {$left_space:36px; margin-left:$left_space; flex:0 0 calc($inp_width - $left_space); 
+          .f_txt_prev{position:absolute; left:em(-30px,$font-size); top:50%; transform:translateY(-50%);}
+          &+.f_txt_next{margin-left:em(20px,$font-size);}
+
+          @include mixin.maxWidth($m767){
+            flex:0 0 calc(90% - $left_space); 
+          }
+        }
         .f_slct, [class^="f_inp"] { border:1px solid var_colors.$btnbdcolorgray; border-radius:8px;}  
         .f_slct{
           &+.f_ico{ top:50%; transform:translateY(-50%); }
         }
         .f_inp{}
-        .f_chk{margin-left:em(20px, $font-size);}
       }
+    }
+    @include mixin.maxWidth($m767){
+      .f_frm_item{display:block; 
+        .f_label_box{padding-left:em(16px,$font-size); height:em(var.$formHeight, $font-size);
+          .f_label{}
+        }
+        .f_inp_box{padding:em(16px, $font-size); width:100%;
+          
+        }
+      } 
     }
   }
 }

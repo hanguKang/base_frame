@@ -1,0 +1,49 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+@use '../config/function' as fn;
+@use 'sass:color';
+
+.freelancer_box{
+  &.f_form{
+    .f_over_wrap{$font-size:var.$defaultfontsize; font-size:$font-size; margin-bottom:em(88px, $font-size);
+      .f_work_stat_list{ display:flex; flex-wrap:wrap; justify-content: space-between;  
+        .f_work_stat_item{ flex:0 0 fn.flx_equ_spc(100%,7, 20px); padding:em(16px, $font-size);  height:em(112px, $font-size); border:1px solid var_colors.$color_gray;border-radius:8px; color:var_colors.$color_black;
+          &.f_stat_total{background-color:var_colors.$primary_bg; color:#fff;}
+          .f_stat_tit{display:block; margin-bottom:em(8px, $font-size);  font-weight:500; text-shadow:0 0 1px lighten(var_colors.$color_black, 50%); 
+            .f_stat_rate{font-style:normal;}
+          }
+          .f_stat_no{ display: flex; justify-content:space-between; align-items:center; height:48px; font-size:32px; font-weight:700;
+            .f_st_txt{font-size:18px; font-weight:500;}
+          }
+        }
+      }
+    }
+    
+    .f_check_stat_list{$font-size:var.$fs_btn; font-size:$font-size; padding:8px; margin-bottom:em(44px, $font-size); display:flex; justify-content:space-between;  width:em(340px, $font-size); background-color: var_colors.$color_gray; border-radius:30px;
+      .f_check_stat_item{flex:0 0 50%; text-align:center; border-radius:82px; 
+        .b-{display:flex; justify-content: center; align-items:center; background-color:transparent; border-color:transparent; font-weight:600;
+          &.active{background:var_colors.$btn_bg; color:#fff;}
+        }
+      }
+    }
+
+    @include mixin.maxWidth($m767){$font-size:var.$defaultfontsize; font-size:$font-size; overflow:hidden;
+      .f_over_wrap{ overflow-x:scroll; 
+        .f_work_stat_list{  width:em(982px, $font-size);
+          .f_work_stat_item{flex:0 0 fn.flx_equ_spc(100%,7, 12px);  padding:em(10px, $font-size); 
+            &.f_stat_total{
+              .f_stat_tit{font-size:14px; letter-spacing: -1px;}
+            }
+          }
+        }
+      }
+      .f_check_stat_list{width:100%;
+        .f_check_stat_item{
+          .b-{width:100%;}
+        }
+      }
+      
+    }
+  }  
+}

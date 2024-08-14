@@ -4,10 +4,10 @@
 @use 'sass:color';
 
 .sub{
-  .v_100{ display:flex; justify-content: center; align-items: center; height:100vh;
+  .v_100{ display:flex; justify-content: center; align-items: center; padding-top:150px; padding-bottom:150px;
     .f_center_box{ 
-      .active{
-        form{$font-size:var.$defaultfontsize; font-size:$font-size; display:flex; max-width:1080px; width:100%; margin:0 auto;
+      .active{background-color:transparent;
+        form{$font-size:var.$defaultfontsize; font-size:$font-size; display:flex; max-width:1080px; width:100%; margin:0 auto; box-shadow:5px 5px 10px rgba(80,80,80,0.1); 
           .log_box{width:em(540px, $font-size); padding:em(50px, $font-size); background-color:#fff; border-radius:em(8px, $font-size);
             .tit_h1 {text-align:center; color:var_colors.$color_black;}
           }
@@ -41,6 +41,21 @@
               .f_btn{color:#fff;}
             }
            
+          }
+
+          @include mixin.maxWidth($m767){
+            flex-wrap:wrap;
+            .log_box{padding:em(50px, $font-size);}
+            .user{
+              .manage{
+                li{display:block;
+                  &:not(:first-child):before{display:none;}
+                }
+              }
+            }
+            .sns{
+              &:before{width:80%; top:0; left:50%; height:0; transform:translateX(-50%); border-left:0; border-top:1px solid var_colors.$bdcolor; }
+            }
           }
         }
       }

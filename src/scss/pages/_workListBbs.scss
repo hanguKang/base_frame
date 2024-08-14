@@ -4,6 +4,9 @@
 @use 'sass:color';
 
 .f_form{$font-size:var.$defaultfontsize; font-size:$font-size; margin-top:em(64px, $font-size);
+  &.freelancer_box{
+    .f_srch_box{margin-bottom:em(66px, $font-size);}
+  }
   .f_srch_box{display:flex; flex-wrap: wrap; justify-content: space-between;
     &.column{display:block;} //열로 나타내기    
     .f_frm_list{flex:0 0 calc(100% - 138px); display:flex; flex-wrap: wrap;
@@ -77,6 +80,7 @@
             &.w_rq_pay{}
             &.w_crfm_pay{}
             &.w_complete{}
+            &.f_fail{border-color:var_colors.$warn_color; color:var_colors.$warn_color;}
           }
         }
       }
@@ -89,7 +93,7 @@
               .f_table_td_tit{float:left; width:35%; height:var.$formHeight; line-height:var.$formHeight; text-align:left; background-color:var_colors.$bdTitBg; }
               .f_table_td_data{float:left; margin-left:10px; width:calc(65% - 10px); height:var.$formHeight; line-height:var.$formHeight;
                 &.f_work_txt {}
-                &.f_work_stat{display:inline-block; height:auto; width:auto; margin-top:14px; line-height:1.5;}
+                .f_work_stat{display:inline-block; height:auto; width:auto; margin-top:14px; line-height:1.5;}
               }
             }
           }

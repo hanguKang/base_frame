@@ -17,6 +17,8 @@ $blue: 'blue';
 $darkblue: 'darkblue';
 $red: 'red';
 $ligreen: 'ligreen';
+$gry : 'gry';
+
 $srch: 'srch-';
 $default: 'default-';
 $brd : 'brd-';
@@ -41,13 +43,20 @@ $brd : 'brd-';
 		}
 	}
 	//라운드
-	&.#{$rad}{$font-size:var.$fs_btn; font-size:em($font-size); border-radius: calc(em(56px, $font-size) / 2);  height:var.$formHeight;
-		&.#{$srch}{width:em(120px, $font-size); }
-		&.#{$default}{width:em(140px, $font-size); background-color:#fff; border:1px solid var_colors.$btnbdcolor; height:calc( var.$formHeight - 2px); }
+	&.#{$rad}{$font-size:var.$fs_btn; font-size:$font-size; border-radius: calc(em(var.$formHeight, $font-size) / 2);  height:var.$formHeight; font-weight:500; text-shadow:0 0 1px var_colors.$color_black;  
+		&.#{$srch}{width:em(120px, $font-size); 
+			&#{"sm"} {width:em(100px, $font-size)}
+			&#{"sm-w"} {width:em(140px, $font-size); height: em(52px, $font-size); }
+			&#{"sm-m"} {width:em(85px, $font-size); height: em(46px, $font-size); }
+		}
+		&.#{$default}{width:em(140px, $font-size);  border:1px solid var_colors.$btnbdcolor; height:calc( var.$formHeight - 2px); 
+			&.#{$gry} {border-color: var_colors.$color_gray;}
+		}
 		&.#{$brd}{width:em(85px, $font-size); height:em(46px, $font-size); }
 		@include maxWidth($m767){
 			&.#{$srch}{width:100%; }
 		}
+
 	}
 
 	&.#{$green} { background-color:var_colors.$btn_bg; color:#fff;}
@@ -55,6 +64,7 @@ $brd : 'brd-';
 	&.#{$darkblue} {background-color:var_colors.$second_color; color:#fff;}
 	&.#{$red} { background-color:var_colors.$btn_bg_red; color:#fff;}
 	&.#{$ligreen} {background-color:var_colors.$accesary_color; color:#fff;}
+	&.#{$gry} {background-color:var_colors.$color_gray; color:var_colors.$color_black; border-color: var_colors.$color_gray;}
 	&.wt {background-color:#fff; color:var_colors.$color_black;}
 
 	
