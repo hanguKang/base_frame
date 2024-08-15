@@ -4,8 +4,9 @@
 
 
 
-.f_modal_overay{$font-size:var.$defaultfontsize; font-size:$font-size; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 9999; overflow: auto; background-color: rgba(0,0,0,0.5);
-  .f_layer_pop{ position:fixed; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);  padding:em(50px, $font-size);  width:100%; max-width:em(480px, $font-size); height:auto; background-color:#fff; border-radius:16px;
+
+.f_modal_overay{display:none; $font-size:var.$defaultfontsize; font-size:$font-size; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 9999; overflow: auto; background-color: rgba(0,0,0,0.5);
+  .f_layer_pop{display:none; position:fixed; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);  padding:em(50px, $font-size);  width:100%; max-width:em(480px, $font-size); height:auto; background-color:#fff; border-radius:16px;
     header{
       .tit_h3{text-align:center; margin-bottom:em(28px, $font-size);}
       .btn_box{position:absolute; right:16px; top:16px; margin-top:0;
