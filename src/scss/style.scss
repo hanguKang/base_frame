@@ -9,38 +9,40 @@
 @import './utiles/var_colors';
 @import './utiles/var';
 @import './config/responsive';
-@import './breakpoints/breakpoint';
-@import './utiles/box-shadow';
+// @import './breakpoints/breakpoint';
+// @import './utiles/box-shadow';
 @import './components/button';
 @import './components/input';
-@import './layout/layout';
 @import './components/h_title';
 @import './components/cnts_p';
-@import './common/header';
-@import './common/footer';
-@import './components/nav';
+// @import './common/header';
+// @import './common/footer';
+// @import './components/nav';
 @import './components/modal';
-@import './pages/sub_conts_head';
+@import './components/tab';
+// @import './pages/sub_conts_head';
 @import './components/bbs_common';
-@import './components/bbs_view_detail';
-@import './components/bbs_pic';
+//@import './components/bbs_view_detail';
+//@import './components/bbs_pic';
 @import './common/page_bg_color';
 @import './common/pagination';
-@import './components/banner';
+//@import './components/banner';
 @import './pages/index';
 @import './pages/login';
 @import './pages/workListBbs';
 @import './pages/workInfoRegister';
 @import './pages/freelancerPayDeposit';
+@import './pages/useSystem';
 
-@import './pages/term';
-@import './pages/select_hotissue_jumin';
-@import './pages/updateFormObjectiveVote';
-@import './pages/insertFormVsVote';
-@import './pages/insertForm';
-@import './pages/usr_form';
-@import './pages/join';
-@import './components/owl.carousel';
+// @import './pages/term';
+// @import './pages/select_hotissue_jumin';
+// @import './pages/updateFormObjectiveVote';
+// @import './pages/insertFormVsVote';
+// @import './pages/insertForm';
+// @import './pages/usr_form';
+// @import './pages/join';
+@import './layout/layout';
+//@import './components/owl.carousel';
 
 
 

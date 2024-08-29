@@ -7,7 +7,7 @@ block content
     h1.tit_h1 일감정보 등록
 
     form(action="").f_form 
-      filedset.f_filed 
+      fieldset.f_field 
         .f_head_box 
           h2.tit_h2 분야 및 일감정보
           p.f_work_status 일감등록 
@@ -17,7 +17,7 @@ block content
               label.f_label(for="f_field") 분야
             .f_inp_box.f_frm_wrap
               .f_inp_div_1
-                select#f_filed.f_slct.plus1.plus2.plus3(name="f_field")
+                select#f_field.f_slct.plus1.plus2.plus3(name="f_field")
                   option 분야를 선택해 주세요
                   option(value="") 분야
                   option(value="part_design") 디자인
@@ -28,15 +28,15 @@ block content
                   option(value="part_guide") 행사-교육ㆍ코칭
                   option(value="part_ect") 기타
                 span.f_ico
-              p.err_msg 분야를 선택해 주세요.
+              p.err_msg.show 분야를 선택해 주세요.
           li.f_frm_item.f_frm_wrap
             .f_label_box
               label.f_label(for="work_no") 일감번호
             .f_inp_box
               .f_inp_div_1
                 input#work_no.f_inp.plus1.plus2.plus3(name="work_no" type="text" placeholder="등록 이후 자동 생성됩니다." readonly )
-              p.err_msg 일감번호를 입력해주세요.
-      filedset.f_filed 
+              p.err_msg.show 일감번호를 입력해주세요.
+      fieldset.f_field 
         h2.tit_h2 일감정보
         ul.f_frm_list.f_frm_wrap
           li.f_frm_item
@@ -45,29 +45,29 @@ block content
             .f_inp_box
               .f_inp_div_1
                 input#business_nm.f_inp.plus1.plus2.plus3(name="business_nm" type="text" placeholder="성명을 입력해주세요.")
-              p.err_msg 일감정보를 입력해주세요.
+              p.err_msg.show 성명을 입력해주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="tel_no") 전화번호
             .f_inp_box
               .f_inp_div_1
                 input#tel_no.f_inp.plus1.plus2.plus3(name="tel_no" type="text" placeholder="예) 01012345678")
-              p.err_msg 전화번호를 입력해주세요.
+              p.err_msg.show 전화번호를 입력해주세요.
           li.f_frm_item.f_frm_wrap
             .f_label_box
               label.f_label(for="email") 메일주소
             .f_inp_box
-              .f_inp_div_3
-                input#email_id.f_inp.plus1.plus2.plus3(name="email_id" type="text" title="메일주소 중 아이디")              
+              .f_inp_div_3.email
+                input#email_id.f_inp.plus1.plus2.plus3(name="email_id" type="text" title="메일주소 중 아이디" placeholder="아이디")              
               .f_inp_div_3.email
                 .abs_at @
-                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트")
+                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트" placeholder="비밀번호")
               .f_inp_div_3.email
                 select#email_slct.f_slct.plus1.plus2.plus3(name="email_slct" type="text" title="메일주소 사이트 선택")
                   option(value="") 직접입력
                   option(value="naver") naver.com
                 .f_ico
-              p.err_msg 메일 주소를 입력해주세요.
+              p.err_msg.show 메일 주소를 입력해주세요.
           li.f_frm_item.f_frm_wrap
             .f_label_box
               label.f_label(for="business_no") 사업자등록번호
@@ -78,9 +78,9 @@ block content
                 input#business_no_2.f_inp.plus1.plus2.plus3(name="business_no" type="text" title="사업자등록번호 3자리중 2번째")
               .f_inp_div_3
                 input#business_no_3.f_inp.plus1.plus2.plus3(name="business_no" type="text" title="사업자등록번호 3자리중 3번째")
-              p.btn_box
-                button.b-.rad-.srch-sm.wt  조회
-              p.err_msg 사업자등록번호를 입력해주세요.
+              p.f_btn_box
+                a.b-.rad-.srch-sm.wt.txt_center(href="#")  조회
+              p.err_msg.show 사업자등록번호를 입력해주세요.
         ul.f_frm_list.f_frm_wrap
           li.f_frm_item
             .f_label_box
@@ -88,7 +88,7 @@ block content
             .f_inp_box
               .f_inp_div_1
                 input#free_nm.f_inp.plus1.plus2.plus3(name="free_nm" type="text" placeholder="성명을 입력해주세요.")
-              p.err_msg 프리랜서 성명을 입력해주세요.
+              p.err_msg.show 프리랜서 성명을 입력해주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="tel2_no") 전화번호
@@ -98,22 +98,22 @@ block content
               .f_chk
                 input#chk_sns(type="checkbox" name="chk_sns")
                 label.chk_lb [선택] SNS 수신동의여부
-              p.err_msg 전화번호를 입력해주세요.
+              p.err_msg.show 전화번호를 입력해주세요.
           li.f_frm_item.f_frm_wrap
             .f_label_box
               label.f_label(for="email2") 메일주소
             .f_inp_box
-              .f_inp_div_3
-                input#email2_id.f_inp.plus1.plus2.plus3(name="email_id2" type="text" title="메일주소 중 아이디")              
+              .f_inp_div_3.email
+                input#email_id.f_inp.plus1.plus2.plus3(name="email_id" type="text" title="메일주소 중 아이디" placeholder="아이디")              
               .f_inp_div_3.email
                 .abs_at @
-                input#email_site2.f_inp.plus1.plus2.plus3(name="email_site2" type="text" title="메일 주소 중 사이트")
+                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트" placeholder="비밀번호")
               .f_inp_div_3.email
-                select#email_slct2.f_slct.plus1.plus2.plus3(name="email_slct2" type="text" title="메일주소 사이트 선택")
+                select#email_slct.f_slct.plus1.plus2.plus3(name="email_slct" type="text" title="메일주소 사이트 선택")
                   option(value="") 직접입력
                   option(value="naver") naver.com
-                .f_ico    
-              p.err_msg 이메일을 입력해주세요.
+                .f_ico
+              p.err_msg.show 이메일을 입력해주세요.
         ul.f_frm_list.f_frm_wrap
           li.f_frm_item
             .f_label_box
@@ -121,14 +121,14 @@ block content
             .f_inp_box
               .f_inp_div_1
                 input#contract_date.f_inp.date.plus1.plus2.plus3(name="contract_date" type="date")
-              p.err_msg 계약일을 선택해 주세요.
+              p.err_msg.show 계약일을 선택해 주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="work_cnts") 작업내용
             .f_inp_box
               .f_inp_div_1
                 input#work_cnts.f_inp.plus1.plus2.plus3(name="work_cnts" type="text" placeholder="작업내용을 입력해주세요.")
-              p.err_msg 작업 내용을 입력해 주세요.
+              p.err_msg.show 작업 내용을 입력해 주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="contract_range") 작업기간
@@ -137,7 +137,7 @@ block content
                 input#contract_range.f_inp.date.plus1.plus2.plus3(name="contract_range" type="date")
               .f_inp_div_2
                 input#contract_range2.f_inp.date.plus1.plus2.plus3(name="contract_range2" type="date")
-              p.err_msg 작업기간을 선택해 주세요.
+              p.err_msg.show 작업기간을 선택해 주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="contract_price") 계약금액
@@ -146,7 +146,7 @@ block content
                 span.f_txt_prev 금
                 input#contract_price.f_inp.plus1.plus2.plus3(name="contract_price" type="text" placeholder="금액을 입력해주세요.")
               p.f_txt_next 원
-              p.err_msg 금액을 입력해 주세요.
+              p.err_msg.show 금액을 입력해 주세요.
           li.f_frm_item
             .f_label_box
               label.f_label(for="f_file_name") 첨부(계약서)
@@ -154,21 +154,21 @@ block content
               .f_inp_div_1
                 input#f_file_name.f_file.f_inp.plus1.plus2.plus3(name="f_file_name" type="text" placeholder="파일을 선택해주세요.")
               input#f_add_file(type="file")
-              p.btn_box
-                button.b-.rad-.srch-sm.wt.f_file_btn 첨부
-              p.err_msg 파일을 첨부해 주세요.
+              p.f_btn_box
+                a.b-.rad-.srch-sm.wt.f_file_btn.txt_center 첨부
+              p.err_msg.show 파일을 첨부해 주세요.
       
       .f_submit_box
         .f_crud_btn_box
-          button.b-.rad-.srch-sm-m.wt 목록   
-          button.b-.rad-.srch-sm-m.gry 수정
-          button.b-.rad-.srch-sm-m.gry 삭제
+          a.b-.rad-.srch-sm-m.txt_center.wt(href="#") 목록   
+          a.b-.rad-.srch-sm-m.txt_center.gry(href="#") 수정
+          a.b-.rad-.srch-sm-m.txt_center.gry(href="#") 삭제
         .f_ctrl_btn_box
-          button.b-.rad-.default-.wt 취소
-          button.b-.rad-.default-.green.f_modal_toggle 저장
-          button.b-.rad-.default-.green 결제요청
-          button.b-.rad-.default-.green 확인요청
-          button.b-.rad-.default-.green 대금청구
+          a.b-.rad-.default-.txt_center.wt(href="#") 취소
+          a.b-.rad-.default-.txt_center.green.f_modal_toggle(href="#") 저장
+          a.b-.rad-.default-.txt_center.green(href="#") 결제요청
+          a.b-.rad-.default-.txt_center.green(href="#") 확인요청
+          a.b-.rad-.default-.txt_center.green(href="#") 대금청구
 
 
 

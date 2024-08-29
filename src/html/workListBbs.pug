@@ -2,9 +2,9 @@ extends ../templates/layout_sub
 
 block styles 
   link( rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" )
-block scripts
-  script( type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
-  script( type="text/javascript" src="../js/daterangepicker.js")
+//- block scripts
+//-   script( type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+//-   script( type="text/javascript" src="../js/daterangepicker.js")
 
 block content 
   main.page_default 
@@ -13,7 +13,41 @@ block content
       form(action="").f_form 
         filedset.f_srch_box 
           legend 일감번호, 분야, 계약일, 작업기간별 검색
-          ul.f_frm_list
+          //- ul.f_frm_list
+          //-   li.f_frm_wrap.top.frst
+          //-     input(type="text" id="work_num" placeholder="일감번호" title="일감번호").f_inp
+          //-     span.f_ico.f_inp_lb.hide
+          //-   li.f_frm_wrap.top.scnd
+          //-     select(id="work_field" title="분야").f_slct
+          //-       option(value="") 분야
+          //-       option(value="part_design") 디자인
+          //-       option(value="part_media") 영상ㆍ사진ㆍ음향
+          //-       option(value="part_it") ITㆍ프로그래밍
+          //-       option(value="part_trans") 통ㆍ번역
+          //-       option(value="part_txt") 문서ㆍ글쓰기
+          //-       option(value="part_guide") 행사-교육ㆍ코칭
+          //-       option(value="part_ect") 기타
+          //-     span.f_ico.f_slct_lb
+          //-   li.f_frm_wrap.btm.thrd
+          //-     .split_box
+          //-       input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+          //-       span#day ( 화 )
+          //-         span.hide 요일
+          //-     .split_box
+          //-       input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+          //-       span#day ( 화 )
+          //-         span.hide 요일
+          //-   li.f_frm_wrap.btm.last#dateRagePicker
+          //-     //input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp         
+          //-     .split_box     
+          //-       input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+          //-       span#day ( 화 )
+          //-         span.hide 요일
+          //-     .split_box
+          //-       input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+          //-       span#day ( 화 )
+          //-         span.hide 요일
+          ul.f_frm_list.f_frm_list_2
             li.f_frm_wrap.top.frst
               input(type="text" id="work_num" placeholder="일감번호" title="일감번호").f_inp
               span.f_ico.f_inp_lb.hide
@@ -28,13 +62,29 @@ block content
                 option(value="part_guide") 행사-교육ㆍ코칭
                 option(value="part_ect") 기타
               span.f_ico.f_slct_lb
+            li.f_frm_wrap.top.scnd
+              select(id="work_field" title="분야").f_slct
+                option(value="") 분야
+                option(value="part_design") 디자인
+                option(value="part_media") 영상ㆍ사진ㆍ음향
+                option(value="part_it") ITㆍ프로그래밍
+                option(value="part_trans") 통ㆍ번역
+                option(value="part_txt") 문서ㆍ글쓰기
+                option(value="part_guide") 행사-교육ㆍ코칭
+                option(value="part_ect") 기타
+              span.f_ico.f_slct_lb
             li.f_frm_wrap.btm.thrd
-              input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
-              span#day ( 화 )
-                span.hide 요일
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
             li.f_frm_wrap.btm.last#dateRagePicker
-              input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp              
-          p.btn_box
+              //input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp         
+              .split_box     
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+          p.f_btn_box.no_ma_top
             button.b-.rad-.srch-.green  검색
         .f_register 
           button.b-.rad-.default-.wt 일감정보등록  
@@ -43,7 +93,7 @@ block content
           table.f_table_data
             caption.hide 일감이력에 대한 일감번호, 발주자성명, 발주자사업자번호, 계약일, 작업내용, 작업기간, 진행상태별 정보 제공하지
             colgroup 
-              col.f_table_1 
+              col.f_table_1
               col.f_table_2 
               col.f_table_3
               col.f_table_4
@@ -52,19 +102,19 @@ block content
               col.f_table_7
             thead 
               tr 
-                th.t_dat_th(style="width:12%;")
+                th.t_dat_th.f_table_num
                   span 일감번호 
-                th.t_dat_th( style="width:8%;")
+                th.t_dat_th.f_table_nam 
                   span 발주자성명
-                th.t_dat_th( style="width:14%;")  
+                th.t_dat_th.f_table_ph
                   span 발주자사업자번호
-                th.t_dat_th( style="width:10%;")  
+                th.t_dat_th.f_table_dat
                   span 계약일
-                th.t_dat_th( style="width:auto;")  
+                th.t_dat_th.f_table_txt
                   span 작업내용
-                th.t_dat_th( style="width:10%;")  
+                th.t_dat_th.f_table_per
                   span 작업기간
-                th.t_dat_th( style="width:8%;")   
+                th.t_dat_th.f_table_stat
                   span 진행상태
             tbody
               tr.none 
@@ -85,7 +135,7 @@ block content
                     span.f_table_td_data.f_work_dat 2024 - 09 - 30
                   td.t_dat_td
                     span.mobile.f_table_td_tit 작업 내용
-                    span.f_table_td_data.f_work_txt 최대 글자수가 몇 글자까지 들어갈까요 확인요망합니다123
+                    span.f_table_td_data.f_work_txt 최대 글자수가 몇 글자까지 들어갈까요 확인요망합니다. 얼마나 많은 글자가
                   td.t_dat_td
                     span.mobile.f_table_td_tit 작업기간
                     span.f_table_td_data.f_work_per 2024 - 09 - 30  ~ 2024 -10 - 31
@@ -103,7 +153,7 @@ block content
                       when 5 
                         span.f_table_td_data.f_work_stat.w_result 결과승인
                       when 6 
-                        span.f_work_stat.w_rq_pay 대금청구
+                        span.f_table_td_data.f_work_stat.w_rq_pay 대금청구
                       when 7 
                         span.f_table_td_data.f_work_stat.w_crfm_pay 구매확정
                       when 8 

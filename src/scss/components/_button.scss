@@ -28,6 +28,10 @@ $brd : 'brd-';
 .gry{background-color:var_colors.$color_gray ; border:1px solid var_colors.$color_gray;}
 
 #{$btn}{ $font-size:var.$fs_btn; font-size:em($font-size); box-sizing:border-box; display:inline-block;  line-height:1.5;  height:auto; letter-spacing:-1px; background-color:var_colors.$btn_bg; border-radius:em(8px, $font-size); text-align:center; 
+	&:focus{outline:3px solid var_colors.$color_blue;}
+	
+	//a태그 버튼
+	&.txt_center { display:flex; align-items:center; justify-content:center; }
 	//사각형 
 	&.#{$rect}{border-radius:em(8px); font-weight:600;	
 		&.#{sm} {}
@@ -35,13 +39,21 @@ $brd : 'brd-';
 		&.#{$lg} {$font-size:28px; font-size:$font-size; width:em(688px, $font-size); height:em(108px, $font-size);  line-height:em(108px, $font-size); }
 
 		@include mixin.maxWidth($tab){
-			&.#{$md} {$font-size:28px; font-size:$font-size; width:em(488px, $font-size); height:em(108px, $font-size); line-height:em(108px, $font-size);}
+			&.#{$md} {$font-size:28px; font-size:$font-size; width:100%; height:em(108px, $font-size); line-height:em(108px, $font-size);}
 		}
 
 		@include mixin.maxWidth($m767){
 			&.#{$md} {$font-size:18px; font-size:$font-size; margin-top:em(26px, $font-size); width:100%; height:em(74px, $font-size); line-height:em(74px, $font-size);}
 		}
-	}
+
+		@include maxWidth($tab){
+		
+		}
+		@include maxWidth($m767){
+
+		}
+	}// 사각형 End
+
 	//라운드
 	&.#{$rad}{$font-size:var.$fs_btn; font-size:$font-size; border-radius: calc(em(var.$formHeight, $font-size) / 2);  height:var.$formHeight; font-weight:500; text-shadow:0 0 1px var_colors.$color_black;  
 		&.#{$srch}{width:em(120px, $font-size); 
@@ -57,7 +69,7 @@ $brd : 'brd-';
 			&.#{$srch}{width:100%; }
 		}
 
-	}
+	}// 라운드 End
 
 	&.#{$green} { background-color:var_colors.$btn_bg; color:#fff;}
 	&.#{$blue} {background-color:var_colors.$btn_bg_blue; color:#fff;}

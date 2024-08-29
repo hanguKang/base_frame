@@ -1,47 +1,50 @@
 
-.f_modal_overay
-  .f_layer_pop
-    article  
-      header
-        h1.tit_h3 업무만족도 평가 
-        p.btn_box   
-          button.f_modal_btn_close_top.btn-modal-close-2 
-            .hide 닫기 
-            
-      p.ctns_p 의뢰한 프리랜서의 작업 성과물에 얼마나 만족하시나요?
-      ul.f_satisfy_list 
-        li.f_satisfy_item.f_satisfy_item_1.active
-          span.hide 만족도 5단계 중 1
-        li.f_satisfy_item.f_satisfy_item_2.active
-          span.hide 만족도 5단계 중 2
-        li.f_satisfy_item.f_satisfy_item_3.active
-          span.hide 만족도 5단계 중 3
-        li.f_satisfy_item.f_satisfy_item_4
-          span.hide 만족도 5단계 중 4
-        li.f_satisfy_item.f_satisfy_item_5
-          span.hide 만족도 5단계 중 5
-      p.f_modal_close 
-        button.f_modal_close_btm 닫기
-
-      header 
-        h1.tit_h3 일감을 저장하시겠습니까?
-        h1.tit_h3 결제 요청 이후에는  
-          br
-          | 수정 및 삭제가 어렵습니다.
-          br
-          | 결제 요청하시겠습니까?
-
-        h1.tit_h3 발주자에게 결과 확인 요청을 
-          br
-          | 진행하시겠습니까?  
-        h1.tit_h3 대금결제를 진행하시겠습니까?
-        h1.tit_h3 결과를 승인 진행하시겠습니까?
-        h1.tit_h3 구매확정 진행하시겠습니까?
-
-        p.btn_box   
-          button.f_modal_btn_close.btn-modal-close-1 
-            .hide 닫기             
+.f_modal_overlay
+.f_layer_pop
+  article  
+    header
+      h1.tit_h3 업무만족도 평가 
       p.btn_box   
-        button.b-.rad-.default-.wt 취소
-        button.b-.rad-.default-.green 확인
+        button.f_modal_btn_close_top.btn-modal-close-2 
+          .hide 닫기 
+          
+    p.ctns_p 의뢰한 프리랜서의 작업 성과물에 얼마나 만족하시나요?
+      br 
+      | (기본 별 1개)
+    ul.f_satisfy_list 
+      li.f_satisfy_item.f_satisfy_item_1.active          
+        button.f_ico_star 
+          span.hide 만족도 5단계 중 1
+      li.f_satisfy_item.f_satisfy_item_2.active          
+        button.f_ico_star
+          span.hide 만족도 5단계 중 2
+      li.f_satisfy_item.f_satisfy_item_3.active          
+        button.f_ico_star
+          span.hide 만족도 5단계 중 3
+      li.f_satisfy_item.f_satisfy_item_4          
+        button.f_ico_star
+          span.hide 만족도 5단계 중 4
+      li.f_satisfy_item.f_satisfy_item_5          
+        button.f_ico_star
+          span.hide 만족도 5단계 중 5
+    p.f_modal_close       
+      button.f_modal_close_btm.btn-modal-close-1 닫기
+
+    header 
+      h1.tit_h3 일감을 저장하시겠습니까?
+      h1.tit_h3 결제 요청 이후에는  
+        br
+        | 수정 및 삭제가 어렵습니다.
+        br
+        | 결제 요청하시겠습니까?
+
+      h1.tit_h3 발주자에게 결과 확인 요청을 
+        br
+        | 진행하시겠습니까?  
+      h1.tit_h3 대금결제를 진행하시겠습니까?
+      h1.tit_h3 결과를 승인 진행하시겠습니까?
+      h1.tit_h3 구매확정 진행하시겠습니까?
+    p.btn_box_modal   
+      button.b-.rad-.default-.wt.f_modal_cancel 취소
+      button.b-.rad-.default-.green.f_modal_ok 확인          
 

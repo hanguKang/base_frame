@@ -3,9 +3,15 @@
 @use '../config/mixin';
 @use 'sass:color';
 
-
+$tab_margin: 40px;
 .main{display: flex; justify-content: center; align-items: center; width:100%;
   main{width:100%;}
+  @include mixin.maxWidth($tab){
+    padding:$tab_margin; 
+  }
+  @include mixin.maxWidth($tab){
+    padding:12px; 
+  }
 }
 .contents{flex:1 0 100%; $font-size:var.$defaultfontsize; width:100%; max-width:em(1200px, $font-size); margin:0 auto; 
   .f_top_box{$font-size:var.$defaultfontsize; font-size:$font-size; display:flex; justify-content:space-between; margin-top:em(200px, $font-size); margin-bottom:em(160px, $font-size);
@@ -23,10 +29,28 @@
       }
     }
     .f_btn_box{display:flex; flex-direction: column; justify-content: space-between;}
+    @include mixin.maxWidth($tab){
+      display:block;
+      .f_head_box{margin-bottom:$tab_margin; }
+      .f_btn_box{ align-items:stretch;  
+        .f_btn{margin-bottom:em(30px, $font-size);}
+        .b-{
+          &.rect-{
+            &.mid-{
+              
+            }
+          }
+        }
+      }
+    }
     @include mixin.maxWidth($m767){
       display:block; margin-top:em(64px, $font-size); margin-bottom:em(40px, $font-size);
       .f_head_box{}
-      .f_btn_box{margin-top:em(14px, $font-size);}
+      .f_btn_box{margin-top:0; justify-content:start; 
+        .f_btn{
+          .b-{margin-top:0;}
+        }
+      }
     }
   }
   .f_btm_box{
@@ -36,7 +60,7 @@
         .f_txt{font-weight:bold;}
       }
       @include mixin.maxWidth($tab){
-        .f_nav_item{flex:0 0 calc(50% - 6px); margin-bottom:em(12px, $font-size);}
+        .f_nav_item{flex:0 0 calc(50% - 6px); margin-bottom:em(12px, $font-size); max-width:50%; }
       }
     }
   }

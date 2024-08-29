@@ -9,7 +9,7 @@
       .active{background-color:transparent;
         form{$font-size:var.$defaultfontsize; font-size:$font-size; display:flex; max-width:1080px; width:100%; margin:0 auto; box-shadow:5px 5px 10px rgba(80,80,80,0.1); 
           .log_box{width:em(540px, $font-size); padding:em(50px, $font-size); background-color:#fff; border-radius:em(8px, $font-size);
-            .tit_h1 {text-align:center; color:var_colors.$color_black;}
+            .tit_h1 {text-align:center; color:var_colors.$color_black; margin-top:0;}
           }
           .user{
             .login_inp{ border: 1px solid #dedede; border-bottom: 0;

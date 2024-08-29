@@ -19,6 +19,6 @@
 body{
   background-color:#fff;
   &:has(.main) {background-color: var_colors.$page_bg;}
-  &:has(.login) {background-color:#F8F8F8;}
+  &:has(.f_login) {background-color:#F8F8F8;}
   .page_default{background-color:#fff;}
 }

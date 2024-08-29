@@ -15,6 +15,11 @@
           }
           .f_stat_no{ display: flex; justify-content:space-between; align-items:center; height:48px; font-size:32px; font-weight:700;
             .f_st_txt{font-size:18px; font-weight:500;}
+          }          
+        }
+        @include mixin.maxWidth($tab){
+          .f_work_stat_item{ box-sizing:border-box; flex:0 0 fn.flx_equ_spc(100%,4, 20px); margin-bottom:20px; 
+            &.tablet{border-color:transparent;}
           }
         }
       }

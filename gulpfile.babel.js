@@ -20,7 +20,6 @@ import babel from "gulp-babel";
 import uglify from "gulp-uglify";
 import watchify from "watchify";
 import fancy_log from "fancy-log";
-import purgecss from "gulp-purgecss";
 
 
 const tsProject = ts.createProject("tsconfig.json");
@@ -42,7 +41,7 @@ const routes = {
     watch: "src/scss/**/*.scss",
   }, 
   js: {
-    src: ["src/js/main.js", "src/js/daterangepicker.js"], //["src/js/main.js", "src/js/owl.carousel.js"]
+    src: ["src/js/main.js"], //["src/js/main.js", "src/js/owl.carousel.js"]
     dest: "build/js",
     watch: "src/js/**/*.js",
   },
@@ -126,12 +125,12 @@ const tsCompile = () =>{ // #4. typescript파일 컴파일
   
 const js = async () => {
   await gulp
-    .src(routes.js.src)
+    .src(routes.js.src)    
     .pipe(
       bro({
         transform: [
-          babelify.configure({ presets: ["@babel/preset-env"] }),
-          ["uglifyify", { global: true }],
+          babelify.configure({ presets: ["@babel/preset-env"] }), 
+          //["uglifyify", { global: true }], //주석제거 및 압축하기
         ],
       })
     )
@@ -140,7 +139,7 @@ const js = async () => {
 const pug = () =>
   gulp.src(routes.pug.src).pipe(gpug({pretty:true})).pipe(gulp.dest(routes.pug.dest));
 const webServer = () => {
-  gulp.src("build").pipe(gws({ livereload: true, open: true }));
+  gulp.src("build").pipe(gws({ livereload: true, open: true, port:8020 }));
 };
 const watch = () => {
   gulp.watch(routes.pug.watch, pug);

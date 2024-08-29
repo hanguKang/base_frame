@@ -1,3 +1,22 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+
 .f_center_box{$font-size:16px; font-size:$font-size; margin: auto; width:100%; max-width:em(1200px, $font-size); 
-  .tit_h1{margin-top:em(64px, $font-size);}
+  .tit_h1{$font-size:var.$fs_h1; font-size:$font-size; margin-top:80px;}
+  .tit_h2{}
+  @include mixin.maxWidth($m767){
+    .tit_h1{$font-size:24px; font-size:$font-size; margin-top:em(64px, $font-size); margin-bottom:em(32px, $font-size); }
+    .tit_h2{$font-size:18px; font-size:$font-size; margin-bottom:em(24px, $font-size);}
+  }
+}
+.f_form{ 
+  &.freelancer_box{
+    .f_srch_box{}
+  }
+  @include mixin.maxWidth($m767){  margin-top:0; 
+    &.freelancer_box{
+      .f_srch_box{margin-top:0; }
+    }
+  }
 }

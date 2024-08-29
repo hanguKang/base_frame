@@ -9,7 +9,11 @@
   @return calc($height/2);
 }
 @function flx_equ_spc($width, $cnt, $spc){
-  @return calc( ( ( $width -  ( $cnt - 1) * $spc ) / $cnt ) );
+  @if $spc == 0 {
+    @return calc( $width / $cnt );
+  }@else{
+    @return calc( ( ( $width -  ( $cnt - 1) * $spc ) / $cnt ) );
+  }
 }
 @function space_width($remain_spc, $width: 100% ){
   @return calc( $width - $remain_spc );

@@ -17,6 +17,75 @@
     .none{
       td{ text-align:center; height:calc($td_height * 10); border-top:1px solid var_colors.$color_deepgray; }
     }
+    thead{
+      tr{
+        //일반 bbs
+        .t_dat_th.f_table_num{width: 12%;}
+        .t_dat_th.f_table_nam{width: 8%;}
+        .t_dat_th.f_table_ph{width: 14%;}
+        .t_dat_th.f_table_dat{width: 10%;}
+        .t_dat_th.f_table_txt{width: auto;}
+        .t_dat_th.f_table_per{width: 10%;}
+        .t_dat_th.f_table_stat{width: 8%;}
+
+        //tab 메뉴 bbs
+        .t_dat_th.f_table_cnt{width:8%;}
+        .t_dat_th.f_table_tit{width:70%;}
+        .t_dat_th.f_table_file{width:8%;}
+        .t_dat_th.f_table_reg{width:14%;}
+
+      }
+    }
+    tbody{
+
+    }
+    @include maxWidth($tab){
+      thead{
+        tr{
+          .t_dat_th.f_table_num{ width: 12%;}
+          .t_dat_th.f_table_nam{ width: 8%;}
+          .t_dat_th.f_table_ph{ width: 14%;}
+          .t_dat_th.f_table_dat{ width: 6%;}
+          .t_dat_th.f_table_txt{ width: auto;}
+          .t_dat_th.f_table_per{ width: 14%;}
+          .t_dat_th.f_table_stat{ width: 12%;}
+        }
+      }
+      tbody{
+        tr{
+          td{
+            &:nth-child(1) {padding-left:6px;}
+            &:last-child {padding-right:6px; }
+          }
+        }
+      }
+    }
+    @include maxWidth($m767){
+      display:block; width:100%;
+      .none{
+        td{ height:calc($td_height * 5); }
+      }
+      thead{display:none;}
+      tbody{display:block; width:100%;
+        tr{display:block; width:100%;
+          &.none{
+            .tit_h3{padding-top:em(10px, $font-size); border-top:0 none; text-align:center;}
+          }
+          .t_dat_td{clear:both; display:block; width:100%; height:var.$formHeight; 
+            &:nth-child(1) {padding-left:0;}
+            &:last-child {padding-right:0; }
+            .f_table_td_tit{float:left; padding-left: 10px; width:35%; height:var.$formHeight; line-height:var.$formHeight; text-align:left; background-color:var_colors.$bdTitBg; }
+            .f_table_td_data{float:left; margin-left:10px; width:calc(65% - 10px); height:56px; 
+              &.f_work_txt {line-height:56px;}
+              &.f_work_stat{display:inline-block; height:auto; width:auto; margin-top:14px; line-height:1.5;}
+            }
+          }
+        }
+        .t_dat_td{
+
+        }
+      }
+    }
   }
 }
 

@@ -1,0 +1,252 @@
+extends ../templates/layout_sub
+
+block content 
+  main.page_default
+    .f_center_box
+      article.f_top_banner.bg_tap_02.web
+        h1.f_top_title.tit_h1 자주 묻는 질문
+        p.p_16 자주 묻는 질문으로 궁금증을 빠르게 해결하세요.
+      section.f_tab
+        h1.hide 프리랜서 안전결제 네비게이터
+        .f_tab_wrap.show 
+          ul.f_tab_list 
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 시스템 사용방법
+            li.f_tab_item_4.active
+              a.f_tab_link_box.p_16(href="#") 자주묻는 질문
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 개인정보처리 등 지침안내
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 계약서 등 참고양식      
+      .f_tab_cntns_wrap
+        section.f_tab_cntns_02
+          form.f_frm_qna.f_frm_wrap(action="")
+            fieldset 
+              legend 자주묻는 질문 폼 양식
+              header.f_frm_header.f_tab_header
+                h2.tit_h1 자주묻는 질문
+                ul.f_frm_tab_list 
+                  li.f_frm_tab_item.f_slct_item
+                    .f_inp_box
+                      select.f_slct
+                        option 전체
+                      .f_ico
+                  li.f_frm_tab_item.f_inp_item
+                    .f_inp_box
+                      input.f_inp
+                  li.f_frm_tab_item.f_btn_item
+                    .f_btn_box 
+                      a.b-.rad-.md-.green(href="#") 검색
+              .f_qna_list
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 회원가입은 어떻게 하나요?
+                  dd.f_qna_a 
+                    ul
+                      li 1단계: 홈페이지 상단 메뉴에서 "회원가입" 버튼을 클릭합니다.
+                      li 2단계: 필수 정보(이름, 이메일, 비밀번호 등)를 입력합니다. 이메일은 반드시 사용 중인 유효한 이메일 주소를 입력해야 합니다.
+                      li 3단계: 약관에 동의하고, "가입하기" 버튼을 클릭합니다.
+                      li 4단계: 이메일로 전송된 인증 링크를 클릭하여 이메일 주소를 확인합니다. 인증이 완료되면 회원가입 절차가 끝나며, 로그인할 수 있습니다.
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 비밀번호를 잊어버렸어요. 어떻게 복구하나요?
+                  dd.f_qna_a 
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 로그인이 안 돼요. 어떻게 해야 하나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 아이디나 이메일을 변경할 수 있나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 서비스 이용 중 오류가 발생했어요. 어떻게 해결하죠?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 사이트의 이용 약관을 어디에서 볼 수 있나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 개인정보를 어떻게 수정하나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 회원 탈퇴는 어떻게 하나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 개인정보를 어떻게 수정하나요?
+                  dd.f_qna_a
+                dl.f_qna_item   
+                  dt.f_qna_q 
+                    a.f_qna_link
+                      span.txt_q
+                        | Q 
+                        span.hide 질문
+                      span.txt_link 서비스 이용 중 오류가 발생했어요. 어떻게 해결하죠?
+                  dd.f_qna_a
+              .f_paging   
+                ul.f_page_list.pagination 
+                  li.f_page_item.start.page_item.arr_first
+                    a.page_link
+                      span.hide 맨 처음 페이지 목록
+                  li.f_page_item.prev.page_item
+                    a.page_link 
+                      | 이전 
+                      span.hide 페이지 목록
+                  li.f_page_item.prev.page_item.pg_num.f_active
+                    a.page_link 1
+                  li.f_page_item.page_item.pg_num 
+                    a.page_link 2
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 3
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 4
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 5
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 6
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 7
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 8
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 9
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 10
+                  li.f_page_item.next.page_item
+                    a.page_link 
+                      | 다음
+                      span.hide 페이지 목록
+                  li.f_page_item.end.page_item.arr_last
+                    a.page_link 
+                      span.hide 맨 마지막 페이지 목록
+                ul.f_page_list.pagination.mobile_show 
+                  li.f_page_item.prev.page_item.f_active
+                    a.page_link 1
+                  li.f_page_item.page_item
+                    a.page_link 20
+       
+          form.f_frm_qna.f_frm_wrap(action="")
+            fieldset 
+              legend 계약서 등 참고양식
+              header.f_frm_header.f_tab_header
+                h2.tit_h1 자주묻는 질문
+                ul.f_frm_tab_list.f_frm_tab_list_ctrct
+                  li.f_frm_tab_item.f_inp_item
+                    .f_inp_box
+                      input.f_inp
+                  li.f_frm_tab_item.f_btn_item
+                    .f_btn_box 
+                      a.b-.rad-.md-.green(href="#") 검색
+              .f_table_wrap
+                table.f_table_data.tb_dp
+                  caption.hide 일감이력에 대한 일감번호, 발주자성명, 발주자사업자번호, 계약일, 작업내용, 작업기간, 진행상태별 정보 제공하지
+                  colgroup 
+                    col.f_table_1 
+                    col.f_table_2 
+                    col.f_table_3
+                    col.f_table_4
+                  thead 
+                    tr 
+                      th.t_dat_th.f_table_cnt
+                        span 번호 
+                      th.t_dat_th.f_table_tit
+                        span 제목
+                      th.t_dat_th.f_table_file
+                        span 첨부파일
+                      th.t_dat_th.f_table_reg
+                        span 등록일
+                  tbody.tb_body
+                    tr.none.tb_row 
+                      td.tit_h3.tb_cell(colspan="4") 등록된 계약조건이 없습니다
+                    each val, idx in {1:'계약의 세부조건과 양측의 합의 내용 및 테스트용 글자를 늘려봅니다.',2:'계약 금액, 지불 방법 및 지불 일정',3: '계약 위반 시 발생할 위약금 및 손해배상 조건',4: '계약 내용과 관련된 비밀을 유지하기 위한 조건',5: '계약과 관련된 분쟁 해결 방법',6: '계약 권리나 의무의 양도 또는 이전 제한',7: '예기치 못한 상황(천재지변 등)에 대한 대비',8: '계약을 해지할 수 있는 조건과 절차',9: '계약서와 함께 첨부된 추가 서류나 문서',10: '계약 위반 시 발생할 위약금 및 손해배상 조건'}
+                      tr.tb_row
+                        td.t_dat_td.tb_cell.f_td_num
+                          span.f_table_td_data.f_ctrct_num= 100 - idx
+                        td.t_dat_td.tb_cell.f_td_title
+                          span.f_table_td_data.f_ctrct_title= val
+                        td.t_dat_td.tb_cell.f_td_file
+                          a.f_table_td_data.f_ctrct_file(title="다운로드")
+                            img.f_ico_file(src= imgurl +"ico/ico_file.png" alt="파일")
+                        td.t_dat_td.tb_cell.f_td_date
+                          span.f_table_td_data.f_ctrct_date 2024 - 09 - 30
+              .f_paging   
+                ul.f_page_list.pagination 
+                  li.f_page_item.start.page_item.arr_first
+                    a.page_link
+                      span.hide 맨 처음 페이지 목록
+                  li.f_page_item.prev.page_item
+                    a.page_link 
+                      | 이전 
+                      span.hide 페이지 목록
+                  li.f_page_item.prev.page_item.pg_num.f_active
+                    a.page_link 1
+                  li.f_page_item.page_item.pg_num 
+                    a.page_link 2
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 3
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 4
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 5
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 6
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 7
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 8
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 9
+                  li.f_page_item.page_item.pg_num
+                    a.page_link 10
+                  li.f_page_item.next.page_item
+                    a.page_link 
+                      | 다음
+                      span.hide 페이지 목록
+                  li.f_page_item.end.page_item.arr_last
+                    a.page_link 
+                      span.hide 맨 마지막 페이지 목록
+                ul.f_page_list.pagination.mobile_show 
+                  li.f_page_item.prev.page_item.f_active
+                    a.page_link 1
+                  li.f_page_item.page_item
+                    a.page_link 20

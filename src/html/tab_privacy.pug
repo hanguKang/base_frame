@@ -1,0 +1,147 @@
+extends ../templates/layout_sub
+
+block content 
+  main.page_default
+    .f_center_box
+      article.f_top_banner.bg_tap_03.web
+        h1.f_top_title.tit_h1 개인정보처리등 지침안내
+        p.p_16 개인정보 보호를 위한 중요 지침을 안내합니다.
+      section.f_tab
+        h1.hide 프리랜서 안전결제 네비게이터
+        .f_tab_wrap.show 
+          ul.f_tab_list 
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 시스템 사용방법
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 자주묻는 질문
+            li.f_tab_item_4.active
+              a.f_tab_link_box.p_16(href="#") 개인정보처리 등 지침안내
+            li.f_tab_item_4
+              a.f_tab_link_box.p_16(href="#") 계약서 등 참고양식      
+      .f_tab_cntns_wrap
+        section.f_tab_cntns_03
+          header.f_tab_header                 
+            h2.tit_h1 개인정보처리 등 지침안내
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 1. 개인정보의 수집 및 이용 목적
+              p.p_16 당사는 고객님의 개인정보를 다음과 같은 목적으로 수집하고 이용합니다.
+            ul.f_privacy_list.circle_list
+              li.f_privacy.circle_item 서비스 제공 및 서비스 이용에 따른 본인 식별, 인증, 회원 관리
+              li.f_privacy.circle_item 주문 처리, 결제 및 서비스 제공
+              li.f_privacy.circle_item 고객 상담 및 불만 처리, 공지사항 전달
+              li.f_privacy.circle_item 마케팅 및 광고에 활용 (이용자의 서비스 이용 기록과 접속 빈도 분석 등)
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 2. 개인정보의 수집 및 이용 목적
+              p.p_16 고객님의 개인정보를 아래와 같이 수집합니다
+            .f_table_wrap 
+              table.f_table_data.privacy_tb 
+                caption.hide 개인정보의 수집 및 이용 목적에 대한 구분(필수 항목, 선택 항목, 자동 수집 정보), 내용에 관한 정보 제공
+                colgroup.hide
+                  col.f_tb_title
+                  col.f_tb_conts
+                thead
+                  tr 
+                    th.f_tb_title(scope="col") 
+                      span.hide 구분
+                    th.f_tb_conts(scope="col") 
+                      span.hide 내용
+                tbody 
+                  tr 
+                    th(scope="row") 필수 항목
+                    td 이름, 이메일 주소, 비밀번호, 전화번호, 주소
+                  tr 
+                    th(scope="row") 선택 항목
+                    td 생년월일, 성별, 결제정보 (카드번호, 은행 계좌 등)
+                  tr 
+                    th(scope="row") 자동 수집 정보
+                    td IP 주소, 쿠키, 서비스 이용기록, 접속 로그
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 3. 개인정보의 수집 방법
+              p.p_16 고객님의 개인정보를 아래와 같이 수집합니다
+            ul.f_privacy_list.circle_list
+              li.f_privacy.circle_item 회원 가입 및 서비스 이용 과정에서 이용자가 직접 입력한 정보
+              li.f_privacy.circle_item 로그 분석 도구를 통한 자동 수집 정보
+              li.f_privacy.circle_item 고객 상담 및 이벤트 응모 등을 통한 수집
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 4. 개인정보의 보유 및 이용기간
+              p.p_16 고객님의 개인정보는 서비스 제공 기간 동안 보유되며, 서비스 종료 후에는 즉시 파기합니다. 다만, 관련 법령에 따라 일정 기간 동안 보관해야 하는 경우 해당 기간 동안 보관합니다
+            .f_table_wrap 
+              table.f_table_data.privacy_tb 
+                caption.hide 개인정보의 수집 및 이용 목적에 대한 구분(계약 또는 청약철회 등에 관한 기록, 대금 결제 및 재화 등의 공급에 관한 기록, 소비자의 불만 또는 분쟁 처리에 관한 기록), 기간에 관한 정보 제공
+                colgroup.hide  
+                  col.f_tb_title
+                  col.f_tb_conts
+                thead  
+                  tr 
+                    th.f_tb_title(scope="col") 
+                      span.hide 구분
+                    th.f_tb_cntns(scope="col") 
+                      span.hide 기간
+                tbody 
+                  tr 
+                    th(scope="row") 계약 또는 청약철회 등에 관한 기록
+                    td 5년
+                  tr 
+                    th(scope="row") 대금 결제 및 재화 등의 공급에 관한 기록
+                    td 5년
+                  tr 
+                    th(scope="row") 소비자의 불만 또는 분쟁 처리에 관한 기록
+                    td 3년
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 5. 개인정보의 파기 절차 및 방법
+              p.p_16 고객님의 개인정보는 목적이 달성된 후 즉시 파기됩니다. 파기 절차 및 방법은 다음과 같습니다
+            ul.f_privacy_list.circle_list
+              li.f_privacy.circle_item 파기 절차: 수집된 개인정보는 목적 달성 후 내부 방침 및 기타 관련 법령에 의해 파기됩니다.
+              li.f_privacy.circle_item 파기 방법: 전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제하며, 종이 문서에 기록된 정보는 분쇄기로 분쇄하거나 소각합니다.
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 6. 개인정보의 제3자 제공
+              p.p_16 당사는 원칙적으로 고객님의 개인정보를 외부에 제공하지 않습니다. 다만, 다음의 경우에는 예외로 합니다.
+            ul.f_privacy_list.circle_list
+              li.f_privacy.circle_item 이용자가 사전에 동의한 경우
+              li.f_privacy.circle_item 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 7. 이용자 및 법정 대리인의 권리와 그 행사 방법
+              p.p_16 고객님은 언제든지 등록된 개인정보를 조회하거나 수정할 수 있으며, 개인정보의 수집, 이용, 제공에 대한 동의를 철회할 수 있습니다. 
+              br
+              | 관련 요청은 홈페이지 내 ‘개인정보 수정’ 메뉴를 통해 직접 하거나, 고객센터를 통해 요청하실 수 있습니다.
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 8. 개인정보 보호를 위한 기술적/관리적 대책
+              p.p_16 당사는 고객님의 개인정보를 안전하게 보호하기 위해 다음과 같은 기술적, 관리적 대책을 시행하고 있습니다.
+            ul.f_privacy_list.circle_list
+              li.f_privacy.circle_item 비밀번호 암호화: 이용자의 비밀번호는 암호화되어 저장 및 관리되며, 본인만이 알 수 있습니다.
+              li.f_privacy.circle_item 해킹 등에 대비한 대책: 백신 프로그램을 이용하여 컴퓨터 바이러스에 의한 피해를 방지하고, 침입차단시스템을 통해 외부로부터의 무단 접근을 차단합니다.
+              li.f_privacy.circle_item 개인정보 취급 직원의 최소화 및 교육: 개인정보를 처리하는 직원을 최소화하고, 정기적인 교육을 실시하여 개인정보 보호의 중요성을 인식시키고 있습니다.
+          section.f_privacy_sect
+            header.f_privacy_header
+              h1.tit_h2 9. 개인정보 처리방침의 변경
+              p.p_16 이 개인정보 처리방침은 법령이나 서비스 변경사항을 반영하기 위해 수시로 개정될 수 있습니다. 변경된 사항은 홈페이지를 통해 공지됩니다.
+              br
+              | 이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다.
+            .f_frm_wrap 
+              .f_slct_box
+                select.f_slct
+                  option 이전 개인정보 처리방침
+                  option 
+                    a(href="#") 2024년 07월 16일 기준
+                  option 
+                    a(href="#") 2023년 12월 12일 기준
+                  option 
+                    a(href="#") 2023년 06월 16일 기준
+                  option 
+                    a(href="#") 2023년 04월 21일 기준
+                  option 
+                    a(href="#") 2023년 04월 01일 기준
+                  option 
+                    a(href="#") 2023년 01월 01일 기준
+                  option 
+                    a(href="#") 2022년 12월 31일 기준
+                .f_ico
+        

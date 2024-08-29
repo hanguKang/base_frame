@@ -46,6 +46,8 @@ block content
               span.f_stat_tit 지급완료
               strong.f_stat_no 01
                 span.f_st_txt 건
+            li.f_work_stat_item.tablet 
+              span.hide 자료없음
         ul.f_check_stat_list 
           li.f_check_stat_item.check_current 
             span.b-.rad-.default-.active 현황조회
@@ -69,12 +71,25 @@ block content
                 option(value="part_ect") 기타
               span.f_ico.f_slct_lb
             li.f_frm_wrap.btm.thrd
-              input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
-              span#day ( 화 )
-                span.hide 요일
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                span#day ( 화 )
+                  span.hide 요일
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                span#day ( 화 )
+                  span.hide 요일
             li.f_frm_wrap.btm.last#dateRagePicker
-              input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp              
-          p.btn_box
+              //input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp         
+              .split_box     
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                span#day ( 화 )
+                  span.hide 요일
+              .split_box
+                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                span#day ( 화 )
+                  span.hide 요일            
+          p.f_btn_box
             button.b-.rad-.srch-.green  검색
         
         .f_table_wrap
@@ -90,19 +105,19 @@ block content
               col.f_table_7
             thead 
               tr 
-                th.t_dat_th(style="width:12%;")
+                th.t_dat_th
                   span 일감번호 
-                th.t_dat_th( style="width:10%;")
+                th.t_dat_th
                   span 발송일련번호
-                th.t_dat_th( style="width:6%;")  
+                th.t_dat_th
                   span 수신인
-                th.t_dat_th( style="width:12%;")  
+                th.t_dat_th
                   span 수신번호
-                th.t_dat_th( style="width:auto;")  
+                th.t_dat_th
                   span 발송내용
-                th.t_dat_th( style="width:8%;")  
+                th.t_dat_th
                   span 발송날짜
-                th.t_dat_th( style="width:8%;")   
+                th.t_dat_th
                   span 발송상태
             tbody
               tr.none 

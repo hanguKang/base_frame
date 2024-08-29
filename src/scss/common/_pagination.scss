@@ -3,7 +3,7 @@
 @use '../config/mixin';
 @use 'sass:color';
 
-.pagination{$font-size:18px; font-size:$font-size; box-sizing:border-box; margin:0 auto; margin-top: em(60px, $font-size); padding-bottom:em(82px, $font-size);  text-align: center; width:100%; max-width:em(1200px, $font-size);
+.f_page_list{$font-size:18px; font-size:$font-size; box-sizing:border-box; margin:0 auto; margin-top: em(60px, $font-size); padding-bottom:em(82px, $font-size);  text-align: center; width:100%; max-width:em(1200px, $font-size);
   &.mobile_show{display:none;}
   .page_item{
     display: inline-block;

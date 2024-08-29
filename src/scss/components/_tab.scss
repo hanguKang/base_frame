@@ -1,0 +1,55 @@
+@use '../utiles/var_colors';
+@use '../utiles/var';
+@use '../config/mixin';
+@use '../config/function' as fn;
+
+
+$class : "f_tab_item_";
+$tabCnt : (2, 3, 4);
+$tabHeight:64px; 
+$bR: calc($tabHeight/2); 
+.f_tab_wrap{ $font-size:var.$defaultfontsize; font-size:$font-size; position:relative; border-radius:$bR; height:$tabHeight; 
+  .f_tab_list{overflow:hidden; display:flex; flex-wrap:wrap; border-radius:$bR;  border:1px solid var_colors.$btnbdcolorgreen;
+    [class^=#{$class}] {position:relative; box-sizing:border-box; height:em($tabHeight, $font-size);  
+      &:not(:first-child) {border-left:0;
+        &:before{content:''; position:absolute; left:0; top:0; height:100%; border-left:1px solid var_colors.$btnbdcolorgreen;}
+      }
+      .f_tab_link_box{display:flex; justify-content:center; align-items:center; height:100%; font-weight:500; 
+        &:focus { outline:3px solid blue; margin:3px; width:calc(100% - 6px); height:calc(100% - 6px);}
+      }
+      &.active{
+        .f_tab_link_box{background-color:var_colors.$primary_bg; color:#fff;}
+      }
+    }
+    .#{$class} { 
+     @each $idx in $tabCnt{
+      &#{$idx}{flex: 0 0 fn.flx_equ_spc(100%, $idx, 0);
+        
+      }
+     }
+    }   
+  }
+  //version - 01.
+  // @include mixin.maxWidth($m767){ overflow:hidden; height:auto;
+  //   &:before{position:absolute; z-index:1; right:20px; top:20px; width:24px; height:24px; content:''; background:url(var.$imgurl_ico+'ico_arr-down-w.png') no-repeat 50% 50%; }
+  //   &.show{overflow:visible;
+  //     &:before{background-image:url(var.$imgurl_ico+'ico_arr-up-w.png');}
+  //     //.f_tab_list{position:absolute; left:0; top:0; width:100%;}
+  //   }
+  //   .f_tab_list{display: block; 
+  //     [class^=#{$class}]:not(:last-child) {border-bottom:1px solid var_colors.$btnbdcolorgreen;}
+  //   }
+  // }
+
+  //version - 02.
+  //.f_tab_wrap 
+  @include mixin.maxWidth($m767){  height:auto; border-radius:0;
+    .f_tab_list{border:0; 
+      [class^=#{$class}]{overflow:hidden; flex:0 0 50%; margin-bottom:14px; border:1px solid var_colors.$btnbdcolorgreen;
+        &:before{display:none;}
+      }
+      [class^=#{$class}]:nth-child(odd) { border-radius:$bR 0 0 $bR; }
+      [class^=#{$class}]:nth-child(even) { border-radius:0 $bR $bR 0; }
+    }
+  }
+}

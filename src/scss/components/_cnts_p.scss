@@ -2,6 +2,7 @@
 @use '../utiles/var';
 @use '../config/mixin';
 
-.ctns_p {$font-size:var.$fs_p;  margin-bottom:em(28px, $font-size); font-family:$fontSet; font-size:$font-size; font-weight: $fw_p; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
-.ctns_l_p {$font-size:var.$fs_p;  margin-bottom:em(28px, $font-size); font-family:$fontSet; font-size:$font-size; font-weight: $fw_l_p; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
-.ctns_sm_p {font-family:$fontSet; font-size:14px; font-weight: $fw_l_p; line-height:1 .5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.3deg);}
+.p_16 {$font-size:var.$fs_p; font-family:$fontSet; font-size:$font-size; font-weight: $fw_p; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); }
+.ctns_p {$font-size:var.$fs_p;  margin-bottom:em(28px, $font-size); font-family:$fontSet; font-size:$font-size; font-weight: $fw_p; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.1deg);}
+.ctns_l_p {$font-size:var.$fs_p;  margin-bottom:em(28px, $font-size); font-family:$fontSet; font-size:$font-size; font-weight: $fw_l_p; line-height:1.5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.1deg);}
+.ctns_sm_p {font-family:$fontSet; font-size:14px; font-weight: $fw_l_p; line-height:1 .5; text-shadow:0 0 0 lighten(var_colors.$color_black, 50%); transform : rotate(0.1deg);}
