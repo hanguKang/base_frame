@@ -141,18 +141,6 @@ const pug = () =>
 const webServer = () => {
   gulp.src("build").pipe(gws({ livereload: true, open: true, port:8020 }));
 };
-const watch = () => {
-  gulp.watch(routes.pug.watch, pug);
-  //gulp.watch(routes.img.src, img); //너무 큰 이미지가 있다면 고려해야할 사항
-  gulp.watch(routes.scss.watch, styles);
-  gulp.watch(routes.js.watch, js);
-  //gulp.watch(routes.ts.watch, typescript);  
-};
-watchedBrowserify.on("update", ts_bundler);
-
-const img = () =>
-  gulp.src(routes.img.src).pipe(image()).pipe(gulp.dest(routes.img.dest));
-
 const styles = () =>
   gulp
     .src(routes.scss.src)
@@ -167,7 +155,18 @@ const styles = () =>
     //.pipe(minifyCss())    
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(routes.scss.dest));
+    
+const watch = () => {
+  gulp.watch(routes.pug.watch, pug);
+  //gulp.watch(routes.img.src, img); //너무 큰 이미지가 있다면 고려해야할 사항
+  gulp.watch(routes.scss.watch, styles);
+  gulp.watch(routes.js.watch, js);
+  //gulp.watch(routes.ts.watch, typescript);  
+};
+watchedBrowserify.on("update", ts_bundler);
 
+const img = () =>
+  gulp.src(routes.img.src).pipe(image()).pipe(gulp.dest(routes.img.dest));
     
 const ghDeploy = () =>
   gulp.src("build/**/*").pipe(

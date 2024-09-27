@@ -3,10 +3,12 @@
 @use '../config/mixin';
 
 .f_center_box{$font-size:16px; font-size:$font-size; margin: auto; width:100%; max-width:em(1200px, $font-size); 
-  .tit_h1{$font-size:var.$fs_h1; font-size:$font-size; margin-top:80px;}
+  .tit_h1{$font-size:var.$fs_h1; font-size:$font-size; margin-top:80px; padding-left:em(38px, $font-size); background:url(../images/ico/component_50.png) no-repeat 0 60%/auto 60%}
   .tit_h2{}
   @include mixin.maxWidth($m767){
-    .tit_h1{$font-size:24px; font-size:$font-size; margin-top:em(64px, $font-size); margin-bottom:em(32px, $font-size); }
+    .tit_h1{$font-size:24px; font-size:$font-size; margin-top:em(64px, $font-size); margin-bottom:em(32px, $font-size); 
+      &.regit_tit{margin-bottom:em(64px, $font-size); }
+    }
     .tit_h2{$font-size:18px; font-size:$font-size; margin-bottom:em(24px, $font-size);}
   }
 }

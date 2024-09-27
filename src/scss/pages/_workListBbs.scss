@@ -5,13 +5,13 @@
 
 .f_form{$font-size:var.$defaultfontsize; font-size:$font-size; margin-top:em(64px, $font-size);
   &.freelancer_box{
-    .f_srch_box{margin-bottom:em(66px, $font-size);}
+    .f_srch_box{display:block; clear:both; margin-bottom:em(66px, $font-size);}
   }
-  .f_srch_box{display:flex; flex-wrap: wrap; justify-content: space-between;
+  .f_srch_box{clear:both; /*display:flex; flex-wrap: wrap; justify-content: space-between;*/
     &.column{display:block;} //열로 나타내기    
-    .f_frm_list{flex:0 0 calc(100% - 138px); display:flex; flex-wrap: wrap;
+    .f_frm_list{/*flex:0 0 calc(100% - 138px);*/ display:flex; flex-wrap: wrap; border-top:2px solid var_colors.$btnbdcolor;
       &.column{width:100%; display:block;}//열로 나타내기     
-      .f_frm_wrap{ position:relative; border:1px solid var_colors.$btnbdcolor; border-left:0 none;
+      .f_frm_wrap{flex:0 0 calc(50% - 1px); position:relative; /*border:1px solid var_colors.$btnbdcolor; border-left:0 none; */ border-bottom:1px solid var_colors.$color_deepgray;
           &.row{ display: flex; flex-wrap:wrap;
             .f_label_box{flex: 0 0 em(282px, $font-size); 
               .f_label{
@@ -25,11 +25,11 @@
             }
           }
 
-          &.frst{flex:0 0 18%; border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
-            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2); padding-left:20px;}
+          &.frst{/*flex:0 0 18%;  border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2); */
+            input { /* border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2); */ padding-left:20px;}
           }
-          &.scnd{flex:0 0 18%;}
-          &.thrd, &.last{flex:0 0 32%; display:flex; justify-content: space-between; 
+          &.scnd{/*flex:0 0 18%;*/ }
+          &.thrd, &.last{/*flex:0 0 32%;*/ display:flex; justify-content: space-between; 
             .split_box{flex:0 0 50%; position:relative; height:100%; 
               &:first-child:before{content:''; position:absolute; right:0; top:50%; transform:translateY(-50%); height:60%; width:0; border-left:1px solid var_colors.$color_gray;}
               #day{position:absolute; left:90px; top:50%; transform:translateY(-50%); }
@@ -38,80 +38,120 @@
           &.thrd{position:relative; 
             input{letter-spacing: -1px;}
           }
-          &.last{ border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
+          &.last{ /* border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0 ;*/
             input {letter-spacing: -1px; border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0; }
           }
       }      
       &.f_frm_list_2{
-        .f_frm_wrap{
-          &.frst{flex:0 0 16%;}
-          &.scnd{flex:0 0 16%;}
+        .f_frm_wrap{flex:0 0 calc(50% - 1px); display:flex; 
+          &.frst{/*flex:0 0 16%;*/}
+          &.scnd{/*flex:0 0 16%;*/}
           &.thrd,
-          &.last {flex:0 0 26%;}
+          &.last {/*flex:0 0 26%;*/}
           &.thrd{}
           &.last{}
+          .lb{flex:0 0 34%; background-color:#f9f9f9; display:flex; align-items:center; padding-left:em(30px);}
+          .inp_wrap{position:relative; flex:0 0 66%; box-sizing:border-box; padding:em(12px); 
+            .ip, .slct{box-sizing:border-box; height:em(46px); width:100%; border:1px solid #ccc; border-radius:8px; }
+          }
+          .f_ico{
+            &.f_slct_lb{
+              &.bbs {left:calc(100% - 40px);} 
+            }
+          }
+          .split_box{position:relative; flex:0 0 33%; padding:em(12px); box-sizing:border-box;
+            &:first-of-type{}
+            &:last-of-type{
+              &:before{content:''; position:absolute; left:-3px; top:50%; width:6px; height:0; border-top:1px solid #1a1a1a;}
+            }
+            .f_inp{ height:em(46px); width:100%; border:1px solid #ccc; border-radius:8px;}
+          }
         }
       }
     }//서치창 끝
-    .f_btn_box{
+    .f_btn_box{ text-align:center; margin-top:em(30px);
       .b-.rad.srch{$font-size:var.$defaultfontsize; font-size:$font-size;  height:em(56px, $font-size); width:em(120px, $font-size); border-radius:calc(var.$formHeight / 2); }
     }
 
     @include maxWidth($tab){
-      .f_frm_list{
+      .f_frm_list{        
         .f_frm_wrap{
-          &.frst{flex:0 0 50%; margin-bottom:em(14px, $font-size); }
-          &.scnd{overflow:hidden; flex:0 0 50%; margin-bottom:em(14px, $font-size); border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
-            input {border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;}
+          &.frst{/*flex:0 0 50%; margin-bottom:em(14px, $font-size); */}
+          &.scnd{overflow:hidden; /*flex:0 0 50%; margin-bottom:em(14px, $font-size); border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
+            input {border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;}*/
           }
-          &.thrd{flex:0 0 50%; border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
-            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}
+          &.thrd{/*flex:0 0 50%; border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
+            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}*/
           }
-          &.last{flex:0 0 50%; }
+          &.last{/*flex:0 0 50%; */}
+          .f_ico{
+            &.f_slct_lb{
+              &.bbs {left:calc(100% - 40px);} 
+            }
+          }
         }
         &.f_frm_list_2{
-          .f_frm_wrap{
-            &.frst{flex:0 0 30%;}
-            &.scnd{flex:0 0 35%;
-              &:nth-child(2){border-radius:0;}
+          
+          .f_frm_wrap{;
+            .lb{flex:0 0 110px;}
+            .frst{/*flex:0 0 30%;*/flex:0 0 calc(100% - 110px);}
+            .scnd{/*flex:0 0 35%;*/flex:0 0 calc(100% - 110px);
+              /*&:nth-child(2){border-radius:0;}*/
             }
             &.thrd,
-            &.last {flex:0 0 50%;}
+            &.last {flex:0 0 100%;}
             &.thrd{}
             &.last{}
+
+            .inp_wrap{ padding:em(8px);
+              .ip, .slct{ }
+            }
+            .split_box{ padding:em(8px); flex:1 0 0;
+              &:first-of-type{padding-right:em(4px); }
+              &:last-of-type{padding-left:em(4px);}
+              &:last-child:before{ left:em(-10px); }
+              .f_inp{width:96%;}
+            }
           }
         }
       }
-      .f_btn_box{margin-top:auto;}
+      /*.f_btn_box{margin-top:auto;}*/
     }  
 
     @include maxWidth($m767){ flex-wrap:wrap;
       .f_frm_list{flex:0 0 100%; 
         .f_frm_wrap{overflow:hidden; margin-bottom:em(14px, $font-size);
           &.frst{flex:0 0 50%; margin-bottom:em(14px, $font-size);}
-          &.scnd{flex:0 0 50%; margin-bottom:em(14px, $font-size); border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;
-            input {border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;}
+          &.scnd{flex:0 0 50%; margin-bottom:em(14px, $font-size); /*border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;*/
+            input {/*border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;*/}
           }
-          &.thrd{flex:0 0 100%; border-radius:calc( var.$formHeight / 2);  border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2);
-            input {border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}}
-          &.last{flex:0 0 100%; border-radius:calc( var.$formHeight / 2);  
-            .split_box{border-radius:calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);
-              input{border-radius:calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);}
+          &.thrd{flex:0 0 100%; /*border-radius:calc( var.$formHeight / 2);  border-left:1px solid var_colors.$btnbdcolor; border-radius: calc( var.$formHeight / 2);*/
+            input {/*border-radius: calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);*/}
+          }
+          &.last{flex:0 0 100%; /*border-radius:calc( var.$formHeight / 2);  */
+            .split_box{/*border-radius:calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);*/
+              input{/*border-radius:calc( var.$formHeight / 2) 0 0 calc( var.$formHeight / 2);*/}
             }
           }
         }
 
         &.f_frm_list_2{
-          .f_frm_wrap{
-            &.frst{flex:0 0 100%; border-radius: calc( var.$formHeight / 2);}
-            &.scnd{flex:0 0 50%;
-              &:nth-child(2){border-radius: calc( var.$formHeight / 2) 0 0  calc( var.$formHeight / 2);}
-              &:nth-child(3){border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;}
+          .f_frm_wrap{margin-bottom:0;
+            &.frst{flex:0 0 100%; /*border-radius: calc( var.$formHeight / 2);*/}
+            &.scnd{flex:0 0 100%;
+              &:nth-child(2){/*border-radius: calc( var.$formHeight / 2) 0 0  calc( var.$formHeight / 2);*/}
+              &:nth-child(3){/*border-radius: 0  calc( var.$formHeight / 2) calc( var.$formHeight / 2) 0;*/}
             }
             &.thrd,
             &.last {flex:0 0 100%;}
             &.thrd{}
             &.last{}
+            .lb{flex:0 0 90px;}
+            .inp_wrap{flex:0 0 calc(100% - 90px);}
+            .split_box{ padding:em(8px); flex:1 0 0;
+              &:last-child:before{ left:em(-3px); }
+              .f_inp{width:100%;}
+            }
           }
         }
       }

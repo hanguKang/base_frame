@@ -15,7 +15,7 @@ $inp_width : fn.space_width(306px);
 .f_frm_wrap{position:relative;
   //1.input, slect요소를 감싸는 상자 ( &:before를 이용해서 arrow_down.png 등을 넣기위한 form요소들을 각각 감싸는 상자다. )
   .f_slct_box{position:relative;}
-  .f_inp_box{position:relative;}
+  .f_inp_box{}
   //2.각 행 안에 존재하는 form요소 (셀렉트 요소, 인풋 요소)
   .f_slct , 
   .f_inp {$font-size:var.$defaultfontsize; font-size:$font-size; height:var.$formHeight; width:100%; max-width:100%; //감싸는 상자크기만큼 커지라고 100%;
@@ -96,7 +96,9 @@ $inp_width : fn.space_width(306px);
 
   //셀렉트 요소 아이콘 지정
   .f_slct {$font-size:var.$defaultfontsize; position:relative; appearance: none;
-    &+.f_ico {content:''; position:absolute; left:calc(100% - 30px); top:em(16px, $font-size); width:em(24px, $font-size); height:em(24px, $font-size);  background:#fff url(var.$imgurl_ico+'ico_arr-down.png') no-repeat 50% 50%;}
+    &+.f_ico {content:''; position:absolute; left:calc(100% - 30px); top:em(16px, $font-size); width:em(24px, $font-size); height:em(24px, $font-size);  background:#fff url(var.$imgurl_ico+'ico_arr-down.png') no-repeat 50% 50%;
+      &.bbs{left:calc(100% - 20px); top:calc(50% - 12px);}
+    }
     &:focus+.f_ico { background:url(var.$imgurl_ico+'ico_arr-up.png') no-repeat 50% 50%;}
   }
   //체크상자 아이콘 지정
@@ -116,7 +118,7 @@ $inp_width : fn.space_width(306px);
 //fieldset 
 .f_field {display:block; $font-size:var.$defaultfontsize; font-size:$font-size;  margin-bottom:em(64px, $font-size);
   //ul
-  .f_frm_list{ $font-size:var.$defaultfontsize; font-size:$font-size; border-top: 1px solid $bbsBdTopColor;
+  .f_frm_list{$font-size:var.$defaultfontsize; font-size:$font-size; border-top: 1px solid $bbsBdTopColor;
     //li
     .f_frm_item{ display:flex; flex-wrap:wrap; height:auto; border-bottom:1px solid var_colors.$bbsBdColor; color:var_colors.$color_black;
       .f_label_box{flex:0 0 em(282px, $font-size); background-color:var_colors.$bdTitBg; padding-left:em(60px, $font-size);

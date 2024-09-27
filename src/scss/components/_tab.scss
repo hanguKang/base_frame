@@ -7,7 +7,7 @@
 $class : "f_tab_item_";
 $tabCnt : (2, 3, 4);
 $tabHeight:64px; 
-$bR: calc($tabHeight/2); 
+$bR: 8px; 
 .f_tab_wrap{ $font-size:var.$defaultfontsize; font-size:$font-size; position:relative; border-radius:$bR; height:$tabHeight; 
   .f_tab_list{overflow:hidden; display:flex; flex-wrap:wrap; border-radius:$bR;  border:1px solid var_colors.$btnbdcolorgreen;
     [class^=#{$class}] {position:relative; box-sizing:border-box; height:em($tabHeight, $font-size);  

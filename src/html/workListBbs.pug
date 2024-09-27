@@ -49,41 +49,48 @@ block content
           //-         span.hide 요일
           ul.f_frm_list.f_frm_list_2
             li.f_frm_wrap.top.frst
-              input(type="text" id="work_num" placeholder="일감번호" title="일감번호").f_inp
-              span.f_ico.f_inp_lb.hide
+              label.lb(for="work_num") 일감번호
+              .inp_wrap
+                input.ip(type="text" id="work_num" placeholder="일감번호" title="일감번호").f_inp
+                span.f_ico.f_inp_lb.hide
             li.f_frm_wrap.top.scnd
-              select(id="work_field" title="분야").f_slct
-                option(value="") 분야
-                option(value="part_design") 디자인
-                option(value="part_media") 영상ㆍ사진ㆍ음향
-                option(value="part_it") ITㆍ프로그래밍
-                option(value="part_trans") 통ㆍ번역
-                option(value="part_txt") 문서ㆍ글쓰기
-                option(value="part_guide") 행사-교육ㆍ코칭
-                option(value="part_ect") 기타
-              span.f_ico.f_slct_lb
-            li.f_frm_wrap.top.scnd
-              select(id="work_field" title="분야").f_slct
-                option(value="") 분야
-                option(value="part_design") 디자인
-                option(value="part_media") 영상ㆍ사진ㆍ음향
-                option(value="part_it") ITㆍ프로그래밍
-                option(value="part_trans") 통ㆍ번역
-                option(value="part_txt") 문서ㆍ글쓰기
-                option(value="part_guide") 행사-교육ㆍ코칭
-                option(value="part_ect") 기타
-              span.f_ico.f_slct_lb
+              label.lb(for="work_field") 분야
+              .inp_wrap
+                select.slct(id="work_field" title="분야").f_slct
+                  option(value="") 분야
+                  option(value="part_design") 디자인
+                  option(value="part_media") 영상ㆍ사진ㆍ음향
+                  option(value="part_it") ITㆍ프로그래밍
+                  option(value="part_trans") 통ㆍ번역
+                  option(value="part_txt") 문서ㆍ글쓰기
+                  option(value="part_guide") 행사-교육ㆍ코칭
+                  option(value="part_ect") 기타
+                span.f_ico.f_slct_lb.bbs
+            //- li.f_frm_wrap.top.scnd
+            //-   label(for="work_")
+            //-   select(id="work_field" title="분야").f_slct
+            //-     option(value="") 분야
+            //-     option(value="part_design") 디자인
+            //-     option(value="part_media") 영상ㆍ사진ㆍ음향
+            //-     option(value="part_it") ITㆍ프로그래밍
+            //-     option(value="part_trans") 통ㆍ번역
+            //-     option(value="part_txt") 문서ㆍ글쓰기
+            //-     option(value="part_guide") 행사-교육ㆍ코칭
+            //-     option(value="part_ect") 기타
+            //-   span.f_ico.f_slct_lb
             li.f_frm_wrap.btm.thrd
+              label.lb(for="work_date01") 계약일
               .split_box
-                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                input(id="work_date01" type="date" placeholder="계약일 시작" title="계약일 시작" ).f_inp
               .split_box
-                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                input(id="work_date02" type="date" placeholder="계약일 종료" title="계약일 종료" ).f_inp
             li.f_frm_wrap.btm.last#dateRagePicker
+              label.lb(for="work_period01") 작업기간
               //input.date(id="work_period" type="text" placeholder="작업기간" name="daterange" value="09/01/2024 - 09/15/2024" title="작업기간" ).f_inp         
               .split_box     
-                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                input(id="work_period01" type="date" placeholder="작업기간 시작" title="작업기간 시작" ).f_inp
               .split_box
-                input(id="work_date" type="date" placeholder="계약일" title="계약일" ).f_inp
+                input(id="work_period02" type="date" placeholder="작업기간 종료" title="작업기간 종료" ).f_inp
           p.f_btn_box.no_ma_top
             button.b-.rad-.srch-.green  검색
         .f_register 

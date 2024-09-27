@@ -47,9 +47,8 @@
             flex-wrap:wrap;
             .log_box{padding:em(50px, $font-size);}
             .user{
-              .manage{
-                li{display:block;
-                  &:not(:first-child):before{display:none;}
+              .manage{ text-align:center;
+                li{ display:inline-block; padding:0 em(10px, $font-size);
                 }
               }
             }

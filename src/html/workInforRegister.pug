@@ -4,13 +4,20 @@ block content
   include ../partials/modal
   main.page_default 
   .f_center_box
-    h1.tit_h1 일감정보 등록
-
+    h1.tit_h1.regit_tit 일감정보 등록
     form(action="").f_form 
       fieldset.f_field 
         .f_head_box 
           h2.tit_h2 분야 및 일감정보
-          p.f_work_status 일감등록 
+          ol.f_work_status
+            li.f_work_stat_item.active 1.일감등록 
+            li.f_work_stat_item 2.예치요청
+            li.f_work_stat_item 3.예치완료 
+            li.f_work_stat_item 4.일감수행 
+            li.f_work_stat_item 5.확인요청 
+            li.f_work_stat_item 6.결과승인 
+            li.f_work_stat_item 7.대금청구 
+            li.f_work_stat_item 8.구해확정 
         ul.f_frm_list
           li.f_frm_item.f_frm_wrap
             .f_label_box
@@ -61,7 +68,7 @@ block content
                 input#email_id.f_inp.plus1.plus2.plus3(name="email_id" type="text" title="메일주소 중 아이디" placeholder="아이디")              
               .f_inp_div_3.email
                 .abs_at @
-                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트" placeholder="비밀번호")
+                input#email_site.f_inp.plus1.plus2.plus3(name="email_site" type="text" title="메일 주소 중 사이트" placeholder="사이트")
               .f_inp_div_3.email
                 select#email_slct.f_slct.plus1.plus2.plus3(name="email_slct" type="text" title="메일주소 사이트 선택")
                   option(value="") 직접입력
@@ -170,7 +177,3 @@ block content
           a.b-.rad-.default-.txt_center.green(href="#") 확인요청
           a.b-.rad-.default-.txt_center.green(href="#") 대금청구
 
-
-
-    
-        

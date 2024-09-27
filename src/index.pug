@@ -33,22 +33,25 @@ block content
             span.b-.rect-.md-.darkblue 발주자
       .f_btm_box 
         ul.f_nav_list
-          each img_n, idx in ['ico_system','ico_question', "ico_info", "ico_cntrt"]
+          each img_n, idx in ['ico_syst','ico_quest', "ico_inform", "ico_cont"]
             li.f_nav_item
               img(src=imgurl+"ico/"+img_n+".png",alt="").f_nav_img
-              case idx  
-                when 0
-                  span.f_txt 시스템 사용방법
-                when 1
-                  span.f_txt 자주 묻는 
-                    br.mobile
-                    |질문(Q&amp;A)
-                when 2
-                  span.f_txt 개인정보 치리 등 
-                    br.mobile
-                    | 지침 안내
-                when 3
-                  span.f_txt 계약서 등 참고양식
+              .f_txt_box
+                case idx  
+                  when 0
+                    strong.f_tit 시스템 사용방법
+                    p.f_txt 시스템을 처음 사용하는 분들을 위해 단계별 이용 방법을 안내합니다.
+                  when 1
+                    strong.f_tit 자주 묻는 질문(Q&amp;A)
+                    p.f_txt 자주 묻는 질문을 모아놓았습니다. 궁금한 점을 빠르게 해결하세요.
+                  when 2
+                    strong.f_tit 개인정보 치리 등 지침 안내
+                    p.f_txt 개인 정보를 안전하게 관리하고 보호하기 위해 마련된 안내서입니다.
+                  when 3
+                    strong.f_tit 계약서 등 참고양식
+                    p.f_txt 시스템을 처음 사용하는 분들을 위해 단계별 이용 방법을 안내합니다.
+                p.f_btn_box
+                  a.b-.rad-.default-.txt_center.green(href="#") 자세히 보기
 
 
 
